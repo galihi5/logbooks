@@ -1,0 +1,619 @@
+2019-08-20 22:58:01.744  WARN 20068 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1d16m14s48ms677µs569ns).
+2019-08-20 23:04:14.471  INFO 20068 --- [       Thread-3] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-20 23:04:14.475  INFO 20068 --- [       Thread-3] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-08-20 23:04:14.476  INFO 20068 --- [       Thread-3] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2019-08-20 23:04:14.481  INFO 20068 --- [       Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-08-20 23:04:14.491  INFO 20068 --- [       Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-08-20 23:17:39.789  INFO 37968 --- [           main] gaw.logbook.LogbookApplicationTests      : Starting LogbookApplicationTests on DESKTOP-46UUO87 with PID 37968 (started by galih in C:\Users\galih\Documents\projects\learn-to-code\logbook)
+2019-08-20 23:17:39.791  INFO 37968 --- [           main] gaw.logbook.LogbookApplicationTests      : No active profile set, falling back to default profiles: default
+2019-08-20 23:17:41.197  INFO 37968 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-08-20 23:17:41.228  INFO 37968 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19ms. Found 0 repository interfaces.
+2019-08-20 23:17:41.818  INFO 37968 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$3a1d2d8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-20 23:17:42.232  INFO 37968 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-08-20 23:17:42.447  INFO 37968 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-08-20 23:17:42.540  INFO 37968 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-08-20 23:17:42.625  INFO 37968 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.10.Final}
+2019-08-20 23:17:42.627  INFO 37968 --- [           main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-08-20 23:17:42.781  INFO 37968 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-08-20 23:17:43.126  INFO 37968 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-08-20 23:17:43.366  INFO 37968 --- [           main] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@51f68849'
+2019-08-20 23:17:43.371  INFO 37968 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-08-20 23:17:44.211  WARN 37968 --- [           main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-08-20 23:17:44.815  INFO 37968 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 17 endpoint(s) beneath base path '/actuator'
+2019-08-20 23:17:45.045  INFO 37968 --- [           main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-08-20 23:17:45.648  INFO 37968 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-20 23:17:46.005  INFO 37968 --- [           main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService
+2019-08-20 23:17:46.539  INFO 37968 --- [           main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-08-20 23:17:46.578  INFO 37968 --- [           main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-08-20 23:17:46.626  INFO 37968 --- [           main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-08-20 23:17:46.832  INFO 37968 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_1
+2019-08-20 23:17:46.834  INFO 37968 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_2
+2019-08-20 23:17:46.839  INFO 37968 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingDELETE_1
+2019-08-20 23:17:46.841  INFO 37968 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_3
+2019-08-20 23:17:46.844  INFO 37968 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_4
+2019-08-20 23:17:46.846  INFO 37968 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_5
+2019-08-20 23:17:46.849  INFO 37968 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_6
+2019-08-20 23:17:46.851  INFO 37968 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_7
+2019-08-20 23:17:46.854  INFO 37968 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_8
+2019-08-20 23:17:46.857  INFO 37968 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_9
+2019-08-20 23:17:46.861  INFO 37968 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_10
+2019-08-20 23:17:46.863  INFO 37968 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_11
+2019-08-20 23:17:46.866  INFO 37968 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_12
+2019-08-20 23:17:46.868  INFO 37968 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_13
+2019-08-20 23:17:46.871  INFO 37968 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_14
+2019-08-20 23:17:46.874  INFO 37968 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_15
+2019-08-20 23:17:46.879  INFO 37968 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_16
+2019-08-20 23:17:46.882  INFO 37968 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_17
+2019-08-20 23:17:46.885  INFO 37968 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_18
+2019-08-20 23:17:46.887  INFO 37968 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_19
+2019-08-20 23:17:46.891  INFO 37968 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_20
+2019-08-20 23:17:46.894  INFO 37968 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_21
+2019-08-20 23:17:46.949  INFO 37968 --- [           main] gaw.logbook.LogbookApplicationTests      : Started LogbookApplicationTests in 7.536 seconds (JVM running for 8.485)
+2019-08-20 23:17:46.976 ERROR 37968 --- [gistrationTask1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task.
+
+java.lang.IllegalStateException: couldn't determine local port. Please set spring.boot.admin.client.instance.service-base-url.
+	at de.codecentric.boot.admin.client.registration.DefaultApplicationFactory.getLocalServerPort(DefaultApplicationFactory.java:189) ~[spring-boot-admin-client-2.1.6.jar:2.1.6]
+	at de.codecentric.boot.admin.client.registration.DefaultApplicationFactory.getServiceBaseUrl(DefaultApplicationFactory.java:104) ~[spring-boot-admin-client-2.1.6.jar:2.1.6]
+	at de.codecentric.boot.admin.client.registration.ServletApplicationFactory.getServiceUrl(ServletApplicationFactory.java:62) ~[spring-boot-admin-client-2.1.6.jar:2.1.6]
+	at de.codecentric.boot.admin.client.registration.ServletApplicationFactory.getManagementBaseUrl(ServletApplicationFactory.java:77) ~[spring-boot-admin-client-2.1.6.jar:2.1.6]
+	at de.codecentric.boot.admin.client.registration.DefaultApplicationFactory.getHealthUrl(DefaultApplicationFactory.java:150) ~[spring-boot-admin-client-2.1.6.jar:2.1.6]
+	at de.codecentric.boot.admin.client.registration.DefaultApplicationFactory.createApplication(DefaultApplicationFactory.java:75) ~[spring-boot-admin-client-2.1.6.jar:2.1.6]
+	at de.codecentric.boot.admin.client.registration.ApplicationRegistrator.createApplication(ApplicationRegistrator.java:154) ~[spring-boot-admin-client-2.1.6.jar:2.1.6]
+	at de.codecentric.boot.admin.client.registration.ApplicationRegistrator.register(ApplicationRegistrator.java:71) ~[spring-boot-admin-client-2.1.6.jar:2.1.6]
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_191]
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308) [na:1.8.0_191]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_191]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294) [na:1.8.0_191]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_191]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_191]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_191]
+
+2019-08-20 23:17:47.216  INFO 37968 --- [       Thread-3] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService
+2019-08-20 23:17:47.217  INFO 37968 --- [       Thread-3] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-20 23:17:47.220  INFO 37968 --- [       Thread-3] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-08-20 23:17:47.220  INFO 37968 --- [       Thread-3] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2019-08-20 23:17:47.233  WARN 37968 --- [       Thread-3] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-199]
+2019-08-20 23:17:47.234  INFO 37968 --- [       Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-08-20 23:17:47.237  INFO 37968 --- [       Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-08-20 23:18:33.525  INFO 35732 --- [           main] gaw.logbook.LogbookApplication           : Starting LogbookApplication v0.0.1-SNAPSHOT on DESKTOP-46UUO87 with PID 35732 (C:\Users\galih\Documents\projects\learn-to-code\logbook\target\logbook-0.0.1-SNAPSHOT.jar started by galih in C:\Users\galih\Documents\projects\learn-to-code\logbook)
+2019-08-20 23:18:33.529  INFO 35732 --- [           main] gaw.logbook.LogbookApplication           : No active profile set, falling back to default profiles: default
+2019-08-20 23:18:35.007  INFO 35732 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-08-20 23:18:35.048  INFO 35732 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24ms. Found 0 repository interfaces.
+2019-08-20 23:18:35.619  INFO 35732 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d52a3523] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-20 23:18:36.341  INFO 35732 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-08-20 23:18:36.376  INFO 35732 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-20 23:18:36.378  INFO 35732 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-20 23:18:36.500  INFO 35732 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-08-20 23:18:36.500  INFO 35732 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2922 ms
+2019-08-20 23:18:36.985  INFO 35732 --- [           main] o.s.b.a.e.web.ServletEndpointRegistrar   : Registered '/actuator/jolokia' to jolokia-actuator-endpoint
+2019-08-20 23:18:37.103  INFO 35732 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-08-20 23:18:37.316  INFO 35732 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-08-20 23:18:37.388  INFO 35732 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-08-20 23:18:37.486  INFO 35732 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.10.Final}
+2019-08-20 23:18:37.490  INFO 35732 --- [           main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-08-20 23:18:37.665  INFO 35732 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-08-20 23:18:37.999  INFO 35732 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-08-20 23:18:38.266  INFO 35732 --- [           main] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@34a875b3'
+2019-08-20 23:18:38.270  INFO 35732 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-08-20 23:18:38.774  WARN 35732 --- [           main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-08-20 23:18:38.926  INFO 35732 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 17 endpoint(s) beneath base path '/actuator'
+2019-08-20 23:18:39.052  INFO 35732 --- [           main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-08-20 23:18:39.279  INFO 35732 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-20 23:18:39.631  INFO 35732 --- [           main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService
+2019-08-20 23:18:40.029  INFO 35732 --- [           main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-08-20 23:18:40.074  INFO 35732 --- [           main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-08-20 23:18:40.134  INFO 35732 --- [           main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-08-20 23:18:40.375  INFO 35732 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_1
+2019-08-20 23:18:40.377  INFO 35732 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_2
+2019-08-20 23:18:40.382  INFO 35732 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_3
+2019-08-20 23:18:40.384  INFO 35732 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingDELETE_1
+2019-08-20 23:18:40.388  INFO 35732 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_4
+2019-08-20 23:18:40.392  INFO 35732 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_5
+2019-08-20 23:18:40.395  INFO 35732 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_6
+2019-08-20 23:18:40.397  INFO 35732 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_7
+2019-08-20 23:18:40.401  INFO 35732 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_8
+2019-08-20 23:18:40.404  INFO 35732 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_9
+2019-08-20 23:18:40.407  INFO 35732 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_10
+2019-08-20 23:18:40.410  INFO 35732 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_11
+2019-08-20 23:18:40.413  INFO 35732 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_12
+2019-08-20 23:18:40.415  INFO 35732 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_13
+2019-08-20 23:18:40.418  INFO 35732 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_14
+2019-08-20 23:18:40.422  INFO 35732 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_15
+2019-08-20 23:18:40.425  INFO 35732 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_16
+2019-08-20 23:18:40.427  INFO 35732 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_17
+2019-08-20 23:18:40.430  INFO 35732 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_18
+2019-08-20 23:18:40.433  INFO 35732 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_19
+2019-08-20 23:18:40.436  INFO 35732 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_20
+2019-08-20 23:18:40.439  INFO 35732 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_21
+2019-08-20 23:18:40.509  INFO 35732 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-08-20 23:18:40.513  INFO 35732 --- [           main] gaw.logbook.LogbookApplication           : Started LogbookApplication in 7.455 seconds (JVM running for 7.956)
+2019-08-20 23:18:41.146  INFO 35732 --- [gistrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Application registered itself as 3c7f5c6fe662
+2019-08-20 23:18:41.221  INFO 35732 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-20 23:18:41.221  INFO 35732 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-08-20 23:18:41.233  INFO 35732 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2019-08-20 23:21:38.216  INFO 35732 --- [       Thread-3] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService
+2019-08-20 23:21:38.217  INFO 35732 --- [       Thread-3] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-20 23:21:38.227  INFO 35732 --- [       Thread-3] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-08-20 23:21:38.230  INFO 35732 --- [       Thread-3] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2019-08-20 23:21:38.233  INFO 35732 --- [       Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-08-20 23:21:38.239  INFO 35732 --- [       Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-08-20 23:23:52.157  INFO 37484 --- [           main] gaw.logbook.LogbookApplicationTests      : Starting LogbookApplicationTests on DESKTOP-46UUO87 with PID 37484 (started by galih in C:\Users\galih\Documents\projects\learn-to-code\logbook)
+2019-08-20 23:23:52.160  INFO 37484 --- [           main] gaw.logbook.LogbookApplicationTests      : No active profile set, falling back to default profiles: default
+2019-08-20 23:23:54.782  INFO 37484 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-08-20 23:23:54.826  INFO 37484 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29ms. Found 0 repository interfaces.
+2019-08-20 23:23:55.985  INFO 37484 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a4deffd1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-20 23:23:56.083  INFO 37484 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.hateoas.config.HateoasConfiguration' of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$245f4d03] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-20 23:23:56.492  INFO 37484 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-08-20 23:23:56.772  INFO 37484 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-08-20 23:23:56.937  INFO 37484 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-08-20 23:23:57.059  INFO 37484 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.10.Final}
+2019-08-20 23:23:57.062  INFO 37484 --- [           main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-08-20 23:23:57.446  INFO 37484 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-08-20 23:23:58.228  INFO 37484 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-08-20 23:23:58.634  INFO 37484 --- [           main] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@2342f1ff'
+2019-08-20 23:23:58.639  INFO 37484 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-08-20 23:24:00.506  WARN 37484 --- [           main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-08-20 23:24:01.953  INFO 37484 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 17 endpoint(s) beneath base path '/actuator'
+2019-08-20 23:24:02.691  INFO 37484 --- [           main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-08-20 23:24:03.837  INFO 37484 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-20 23:24:04.502  INFO 37484 --- [           main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService
+2019-08-20 23:24:04.857  INFO 37484 --- [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 2d9833fd-b977-4a3c-9d29-1d7164d232ac
+
+2019-08-20 23:24:05.647  INFO 37484 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5ddf5118, org.springframework.security.web.context.SecurityContextPersistenceFilter@3180aee, org.springframework.security.web.header.HeaderWriterFilter@fe156f4, org.springframework.security.web.authentication.logout.LogoutFilter@42ebece0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@288b73c1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@174cb0d8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7b9d1a4, org.springframework.security.web.session.SessionManagementFilter@55317c63, org.springframework.security.web.access.ExceptionTranslationFilter@c2f7c63, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1e6bd367]
+2019-08-20 23:24:06.106  INFO 37484 --- [           main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-08-20 23:24:06.368  INFO 37484 --- [           main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-08-20 23:24:06.505  INFO 37484 --- [           main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-08-20 23:24:06.910  INFO 37484 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_1
+2019-08-20 23:24:06.914  INFO 37484 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_2
+2019-08-20 23:24:06.919  INFO 37484 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingDELETE_1
+2019-08-20 23:24:06.923  INFO 37484 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_3
+2019-08-20 23:24:06.925  INFO 37484 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_4
+2019-08-20 23:24:06.927  INFO 37484 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_5
+2019-08-20 23:24:06.929  INFO 37484 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_6
+2019-08-20 23:24:06.933  INFO 37484 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_7
+2019-08-20 23:24:06.935  INFO 37484 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_8
+2019-08-20 23:24:06.937  INFO 37484 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_9
+2019-08-20 23:24:06.939  INFO 37484 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_10
+2019-08-20 23:24:06.942  INFO 37484 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_11
+2019-08-20 23:24:06.944  INFO 37484 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_12
+2019-08-20 23:24:06.946  INFO 37484 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_13
+2019-08-20 23:24:06.948  INFO 37484 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_14
+2019-08-20 23:24:06.951  INFO 37484 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_15
+2019-08-20 23:24:06.955  INFO 37484 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_16
+2019-08-20 23:24:06.958  INFO 37484 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_17
+2019-08-20 23:24:06.961  INFO 37484 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_18
+2019-08-20 23:24:06.964  INFO 37484 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_19
+2019-08-20 23:24:06.967  INFO 37484 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_20
+2019-08-20 23:24:06.969  INFO 37484 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_21
+2019-08-20 23:24:07.032  INFO 37484 --- [           main] gaw.logbook.LogbookApplicationTests      : Started LogbookApplicationTests in 15.483 seconds (JVM running for 17.13)
+2019-08-20 23:24:07.354 ERROR 37484 --- [gistrationTask1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task.
+
+java.lang.IllegalStateException: couldn't determine local port. Please set spring.boot.admin.client.instance.service-base-url.
+	at de.codecentric.boot.admin.client.registration.DefaultApplicationFactory.getLocalServerPort(DefaultApplicationFactory.java:189) ~[spring-boot-admin-client-2.1.6.jar:2.1.6]
+	at de.codecentric.boot.admin.client.registration.DefaultApplicationFactory.getServiceBaseUrl(DefaultApplicationFactory.java:104) ~[spring-boot-admin-client-2.1.6.jar:2.1.6]
+	at de.codecentric.boot.admin.client.registration.ServletApplicationFactory.getServiceUrl(ServletApplicationFactory.java:62) ~[spring-boot-admin-client-2.1.6.jar:2.1.6]
+	at de.codecentric.boot.admin.client.registration.ServletApplicationFactory.getManagementBaseUrl(ServletApplicationFactory.java:77) ~[spring-boot-admin-client-2.1.6.jar:2.1.6]
+	at de.codecentric.boot.admin.client.registration.DefaultApplicationFactory.getHealthUrl(DefaultApplicationFactory.java:150) ~[spring-boot-admin-client-2.1.6.jar:2.1.6]
+	at de.codecentric.boot.admin.client.registration.DefaultApplicationFactory.createApplication(DefaultApplicationFactory.java:75) ~[spring-boot-admin-client-2.1.6.jar:2.1.6]
+	at de.codecentric.boot.admin.client.registration.ApplicationRegistrator.createApplication(ApplicationRegistrator.java:154) ~[spring-boot-admin-client-2.1.6.jar:2.1.6]
+	at de.codecentric.boot.admin.client.registration.ApplicationRegistrator.register(ApplicationRegistrator.java:71) ~[spring-boot-admin-client-2.1.6.jar:2.1.6]
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_191]
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308) [na:1.8.0_191]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_191]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294) [na:1.8.0_191]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_191]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_191]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_191]
+
+2019-08-20 23:24:07.862  INFO 37484 --- [       Thread-3] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService
+2019-08-20 23:24:07.865  INFO 37484 --- [       Thread-3] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-20 23:24:07.871  INFO 37484 --- [       Thread-3] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-08-20 23:24:07.872  INFO 37484 --- [       Thread-3] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2019-08-20 23:24:07.888  WARN 37484 --- [       Thread-3] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-199]
+2019-08-20 23:24:07.889  INFO 37484 --- [       Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-08-20 23:24:07.893  INFO 37484 --- [       Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-08-20 23:25:30.319  INFO 28332 --- [           main] gaw.logbook.LogbookApplicationTests      : Starting LogbookApplicationTests on DESKTOP-46UUO87 with PID 28332 (started by galih in C:\Users\galih\Documents\projects\learn-to-code\logbook)
+2019-08-20 23:25:30.321  INFO 28332 --- [           main] gaw.logbook.LogbookApplicationTests      : No active profile set, falling back to default profiles: default
+2019-08-20 23:25:31.875  INFO 28332 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-08-20 23:25:31.906  INFO 28332 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19ms. Found 0 repository interfaces.
+2019-08-20 23:25:32.653  INFO 28332 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$eba0767] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-20 23:25:32.733  INFO 28332 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.hateoas.config.HateoasConfiguration' of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$8e3a5499] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-20 23:25:32.989  INFO 28332 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-08-20 23:25:33.204  INFO 28332 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-08-20 23:25:33.327  INFO 28332 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-08-20 23:25:33.412  INFO 28332 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.10.Final}
+2019-08-20 23:25:33.414  INFO 28332 --- [           main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-08-20 23:25:33.597  INFO 28332 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-08-20 23:25:33.971  INFO 28332 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-08-20 23:25:34.224  INFO 28332 --- [           main] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@44bbb7c6'
+2019-08-20 23:25:34.229  INFO 28332 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-08-20 23:25:35.293  WARN 28332 --- [           main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-08-20 23:25:36.157  INFO 28332 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 17 endpoint(s) beneath base path '/actuator'
+2019-08-20 23:25:36.471  INFO 28332 --- [           main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-08-20 23:25:37.145  INFO 28332 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-20 23:25:37.560  INFO 28332 --- [           main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService
+2019-08-20 23:25:37.783  INFO 28332 --- [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: be3f46d0-fc19-4453-ae3b-e6c0671d1f94
+
+2019-08-20 23:25:37.970  INFO 28332 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5ddf5118, org.springframework.security.web.context.SecurityContextPersistenceFilter@3180aee, org.springframework.security.web.header.HeaderWriterFilter@fe156f4, org.springframework.security.web.authentication.logout.LogoutFilter@42ebece0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@288b73c1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@174cb0d8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7b9d1a4, org.springframework.security.web.session.SessionManagementFilter@55317c63, org.springframework.security.web.access.ExceptionTranslationFilter@c2f7c63, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1e6bd367]
+2019-08-20 23:25:38.296  INFO 28332 --- [           main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-08-20 23:25:38.337  INFO 28332 --- [           main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-08-20 23:25:38.393  INFO 28332 --- [           main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-08-20 23:25:38.621  INFO 28332 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_1
+2019-08-20 23:25:38.624  INFO 28332 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_2
+2019-08-20 23:25:38.629  INFO 28332 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingDELETE_1
+2019-08-20 23:25:38.633  INFO 28332 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_3
+2019-08-20 23:25:38.635  INFO 28332 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_4
+2019-08-20 23:25:38.639  INFO 28332 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_5
+2019-08-20 23:25:38.641  INFO 28332 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_6
+2019-08-20 23:25:38.645  INFO 28332 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_7
+2019-08-20 23:25:38.649  INFO 28332 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_8
+2019-08-20 23:25:38.652  INFO 28332 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_9
+2019-08-20 23:25:38.654  INFO 28332 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_10
+2019-08-20 23:25:38.656  INFO 28332 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_11
+2019-08-20 23:25:38.659  INFO 28332 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_12
+2019-08-20 23:25:38.661  INFO 28332 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_13
+2019-08-20 23:25:38.664  INFO 28332 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_14
+2019-08-20 23:25:38.670  INFO 28332 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_15
+2019-08-20 23:25:38.672  INFO 28332 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_16
+2019-08-20 23:25:38.675  INFO 28332 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_17
+2019-08-20 23:25:38.677  INFO 28332 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_18
+2019-08-20 23:25:38.680  INFO 28332 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_19
+2019-08-20 23:25:38.683  INFO 28332 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_20
+2019-08-20 23:25:38.685  INFO 28332 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_21
+2019-08-20 23:25:38.729  INFO 28332 --- [           main] gaw.logbook.LogbookApplicationTests      : Started LogbookApplicationTests in 8.842 seconds (JVM running for 9.796)
+2019-08-20 23:25:38.908  INFO 28332 --- [       Thread-3] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService
+2019-08-20 23:25:38.909  INFO 28332 --- [       Thread-3] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-20 23:25:38.914  INFO 28332 --- [       Thread-3] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-08-20 23:25:38.915  INFO 28332 --- [       Thread-3] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2019-08-20 23:25:38.927  WARN 28332 --- [       Thread-3] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-199]
+2019-08-20 23:25:38.928  INFO 28332 --- [       Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-08-20 23:25:38.945  INFO 28332 --- [       Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-08-20 23:25:46.079  INFO 28152 --- [           main] gaw.logbook.LogbookApplication           : Starting LogbookApplication v0.0.1-SNAPSHOT on DESKTOP-46UUO87 with PID 28152 (C:\Users\galih\Documents\projects\learn-to-code\logbook\target\logbook-0.0.1-SNAPSHOT.jar started by galih in C:\Users\galih\Documents\projects\learn-to-code\logbook)
+2019-08-20 23:25:46.083  INFO 28152 --- [           main] gaw.logbook.LogbookApplication           : No active profile set, falling back to default profiles: default
+2019-08-20 23:25:47.683  INFO 28152 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-08-20 23:25:47.716  INFO 28152 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18ms. Found 0 repository interfaces.
+2019-08-20 23:25:48.360  INFO 28152 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$857bbfdd] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-20 23:25:48.405  INFO 28152 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.hateoas.config.HateoasConfiguration' of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$4fc0d0f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-20 23:25:49.180  INFO 28152 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-08-20 23:25:49.217  INFO 28152 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-20 23:25:49.219  INFO 28152 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-20 23:25:49.337  INFO 28152 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-08-20 23:25:49.338  INFO 28152 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3202 ms
+2019-08-20 23:25:50.406  INFO 28152 --- [           main] o.s.b.a.e.web.ServletEndpointRegistrar   : Registered '/actuator/jolokia' to jolokia-actuator-endpoint
+2019-08-20 23:25:50.526  INFO 28152 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-08-20 23:25:50.732  INFO 28152 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-08-20 23:25:50.825  INFO 28152 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-08-20 23:25:50.905  INFO 28152 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.10.Final}
+2019-08-20 23:25:50.908  INFO 28152 --- [           main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-08-20 23:25:51.066  INFO 28152 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-08-20 23:25:51.389  INFO 28152 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-08-20 23:25:51.641  INFO 28152 --- [           main] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@2a2c13a8'
+2019-08-20 23:25:51.646  INFO 28152 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-08-20 23:25:52.505  WARN 28152 --- [           main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-08-20 23:25:52.924  INFO 28152 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 17 endpoint(s) beneath base path '/actuator'
+2019-08-20 23:25:53.473  INFO 28152 --- [           main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-08-20 23:25:53.758  INFO 28152 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-20 23:25:54.223  INFO 28152 --- [           main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService
+2019-08-20 23:25:54.511  INFO 28152 --- [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: c9ae6d2b-86c1-414f-9560-c098a7c8d647
+
+2019-08-20 23:25:54.729  INFO 28152 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@133e019b, org.springframework.security.web.context.SecurityContextPersistenceFilter@1827a871, org.springframework.security.web.header.HeaderWriterFilter@70e659aa, org.springframework.security.web.authentication.logout.LogoutFilter@f8908f6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7249dadf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1c25b8a7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@41382722, org.springframework.security.web.session.SessionManagementFilter@285f09de, org.springframework.security.web.access.ExceptionTranslationFilter@596df867, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1734f68]
+2019-08-20 23:25:55.016  INFO 28152 --- [           main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-08-20 23:25:55.056  INFO 28152 --- [           main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-08-20 23:25:55.111  INFO 28152 --- [           main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-08-20 23:25:55.297  INFO 28152 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_1
+2019-08-20 23:25:55.301  INFO 28152 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_2
+2019-08-20 23:25:55.305  INFO 28152 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingDELETE_1
+2019-08-20 23:25:55.308  INFO 28152 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_3
+2019-08-20 23:25:55.312  INFO 28152 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_4
+2019-08-20 23:25:55.315  INFO 28152 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_5
+2019-08-20 23:25:55.317  INFO 28152 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_6
+2019-08-20 23:25:55.318  INFO 28152 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_7
+2019-08-20 23:25:55.321  INFO 28152 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_8
+2019-08-20 23:25:55.325  INFO 28152 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_9
+2019-08-20 23:25:55.327  INFO 28152 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_10
+2019-08-20 23:25:55.329  INFO 28152 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_11
+2019-08-20 23:25:55.332  INFO 28152 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_12
+2019-08-20 23:25:55.335  INFO 28152 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_13
+2019-08-20 23:25:55.337  INFO 28152 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_14
+2019-08-20 23:25:55.342  INFO 28152 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_15
+2019-08-20 23:25:55.345  INFO 28152 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_16
+2019-08-20 23:25:55.348  INFO 28152 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_17
+2019-08-20 23:25:55.350  INFO 28152 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_18
+2019-08-20 23:25:55.353  INFO 28152 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_19
+2019-08-20 23:25:55.356  INFO 28152 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_20
+2019-08-20 23:25:55.359  INFO 28152 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_21
+2019-08-20 23:25:55.422  INFO 28152 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-08-20 23:25:55.427  INFO 28152 --- [           main] gaw.logbook.LogbookApplication           : Started LogbookApplication in 9.796 seconds (JVM running for 10.317)
+2019-08-20 23:25:56.541  WARN 28152 --- [gistrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Failed to register application as Application(name=spring-boot-application, managementUrl=http://localhost:8080/actuator, healthUrl=http://localhost:8080/actuator/health, serviceUrl=http://localhost:8080/) at spring-boot-admin ([http://localhost:8090/instances]): I/O error on POST request for "http://localhost:8090/instances": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect. Further attempts are logged on DEBUG level
+2019-08-20 23:26:35.928  INFO 28152 --- [gistrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Application registered itself as a973ff14be49
+2019-08-20 23:26:36.013  INFO 28152 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-20 23:26:36.014  INFO 28152 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-08-20 23:26:36.044  INFO 28152 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 29 ms
+2019-08-20 23:28:24.585  INFO 28152 --- [       Thread-3] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService
+2019-08-20 23:28:24.586  INFO 28152 --- [       Thread-3] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-20 23:28:24.592  INFO 28152 --- [       Thread-3] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-08-20 23:28:24.592  INFO 28152 --- [       Thread-3] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2019-08-20 23:28:24.596  INFO 28152 --- [       Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-08-20 23:28:24.602  INFO 28152 --- [       Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-08-20 23:28:32.960  INFO 36292 --- [           main] gaw.logbook.LogbookApplicationTests      : Starting LogbookApplicationTests on DESKTOP-46UUO87 with PID 36292 (started by galih in C:\Users\galih\Documents\projects\learn-to-code\logbook)
+2019-08-20 23:28:32.961  INFO 36292 --- [           main] gaw.logbook.LogbookApplicationTests      : No active profile set, falling back to default profiles: default
+2019-08-20 23:28:34.519  INFO 36292 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-08-20 23:28:34.552  INFO 36292 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20ms. Found 0 repository interfaces.
+2019-08-20 23:28:35.316  INFO 36292 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$8ab0a9a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-20 23:28:35.391  INFO 36292 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.hateoas.config.HateoasConfiguration' of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$882b57cc] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-20 23:28:35.667  INFO 36292 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-08-20 23:28:35.861  INFO 36292 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-08-20 23:28:35.971  INFO 36292 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-08-20 23:28:36.050  INFO 36292 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.10.Final}
+2019-08-20 23:28:36.053  INFO 36292 --- [           main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-08-20 23:28:36.213  INFO 36292 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-08-20 23:28:36.575  INFO 36292 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-08-20 23:28:36.840  INFO 36292 --- [           main] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@340c5fb6'
+2019-08-20 23:28:36.845  INFO 36292 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-08-20 23:28:37.837  WARN 36292 --- [           main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-08-20 23:28:38.750  INFO 36292 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 17 endpoint(s) beneath base path '/actuator'
+2019-08-20 23:28:39.094  INFO 36292 --- [           main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-08-20 23:28:39.809  INFO 36292 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-20 23:28:40.213  INFO 36292 --- [           main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService
+2019-08-20 23:28:40.512  INFO 36292 --- [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: b01e2ac3-5f3d-4eb3-ac4b-5c43f4258c12
+
+2019-08-20 23:28:40.761  INFO 36292 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@744fb110, org.springframework.security.web.context.SecurityContextPersistenceFilter@69fd99c1, org.springframework.security.web.header.HeaderWriterFilter@5ca8bd01, org.springframework.security.web.csrf.CsrfFilter@612290d, org.springframework.security.web.authentication.logout.LogoutFilter@2b19b346, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5c0ece6d, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@5d4a34ff, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@838e109, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@49353d43, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@180cc0df, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1eb7ec59, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7474196, org.springframework.security.web.session.SessionManagementFilter@70e5737f, org.springframework.security.web.access.ExceptionTranslationFilter@6d695ec4, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@64d53f0d]
+2019-08-20 23:28:41.106  INFO 36292 --- [           main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-08-20 23:28:41.143  INFO 36292 --- [           main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-08-20 23:28:41.196  INFO 36292 --- [           main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-08-20 23:28:41.433  INFO 36292 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_1
+2019-08-20 23:28:41.436  INFO 36292 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_2
+2019-08-20 23:28:41.440  INFO 36292 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingDELETE_1
+2019-08-20 23:28:41.442  INFO 36292 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_3
+2019-08-20 23:28:41.445  INFO 36292 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_4
+2019-08-20 23:28:41.447  INFO 36292 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_5
+2019-08-20 23:28:41.450  INFO 36292 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_6
+2019-08-20 23:28:41.454  INFO 36292 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_7
+2019-08-20 23:28:41.456  INFO 36292 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_8
+2019-08-20 23:28:41.458  INFO 36292 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_9
+2019-08-20 23:28:41.460  INFO 36292 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_10
+2019-08-20 23:28:41.463  INFO 36292 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_11
+2019-08-20 23:28:41.466  INFO 36292 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_12
+2019-08-20 23:28:41.469  INFO 36292 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_13
+2019-08-20 23:28:41.472  INFO 36292 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_14
+2019-08-20 23:28:41.477  INFO 36292 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_15
+2019-08-20 23:28:41.478  INFO 36292 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_16
+2019-08-20 23:28:41.481  INFO 36292 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_17
+2019-08-20 23:28:41.484  INFO 36292 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_18
+2019-08-20 23:28:41.487  INFO 36292 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_19
+2019-08-20 23:28:41.489  INFO 36292 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_20
+2019-08-20 23:28:41.491  INFO 36292 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_21
+2019-08-20 23:28:41.532  INFO 36292 --- [           main] gaw.logbook.LogbookApplicationTests      : Started LogbookApplicationTests in 8.954 seconds (JVM running for 9.941)
+2019-08-20 23:28:41.713  INFO 36292 --- [gistrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Application registered itself as a973ff14be49
+2019-08-20 23:28:41.726  INFO 36292 --- [       Thread-3] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService
+2019-08-20 23:28:41.727  INFO 36292 --- [       Thread-3] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-20 23:28:41.735  INFO 36292 --- [       Thread-3] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-08-20 23:28:41.736  INFO 36292 --- [       Thread-3] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2019-08-20 23:28:41.750  WARN 36292 --- [       Thread-3] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-199]
+2019-08-20 23:28:41.750  INFO 36292 --- [       Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-08-20 23:28:41.754  INFO 36292 --- [       Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-08-20 23:28:45.690  INFO 37472 --- [           main] gaw.logbook.LogbookApplication           : Starting LogbookApplication v0.0.1-SNAPSHOT on DESKTOP-46UUO87 with PID 37472 (C:\Users\galih\Documents\projects\learn-to-code\logbook\target\logbook-0.0.1-SNAPSHOT.jar started by galih in C:\Users\galih\Documents\projects\learn-to-code\logbook)
+2019-08-20 23:28:45.694  INFO 37472 --- [           main] gaw.logbook.LogbookApplication           : No active profile set, falling back to default profiles: default
+2019-08-20 23:28:47.272  INFO 37472 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-08-20 23:28:47.300  INFO 37472 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15ms. Found 0 repository interfaces.
+2019-08-20 23:28:47.934  INFO 37472 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$f01fd7ff] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-20 23:28:47.976  INFO 37472 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.hateoas.config.HateoasConfiguration' of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$6fa02531] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-20 23:28:48.775  INFO 37472 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-08-20 23:28:48.809  INFO 37472 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-20 23:28:48.810  INFO 37472 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-20 23:28:48.909  INFO 37472 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-08-20 23:28:48.910  INFO 37472 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3157 ms
+2019-08-20 23:28:49.997  INFO 37472 --- [           main] o.s.b.a.e.web.ServletEndpointRegistrar   : Registered '/actuator/jolokia' to jolokia-actuator-endpoint
+2019-08-20 23:28:50.125  INFO 37472 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-08-20 23:28:50.365  INFO 37472 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-08-20 23:28:50.464  INFO 37472 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-08-20 23:28:50.550  INFO 37472 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.10.Final}
+2019-08-20 23:28:50.554  INFO 37472 --- [           main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-08-20 23:28:50.727  INFO 37472 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-08-20 23:28:51.032  INFO 37472 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-08-20 23:28:51.271  INFO 37472 --- [           main] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@774698ab'
+2019-08-20 23:28:51.276  INFO 37472 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-08-20 23:28:52.103  WARN 37472 --- [           main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-08-20 23:28:52.590  INFO 37472 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 17 endpoint(s) beneath base path '/actuator'
+2019-08-20 23:28:53.215  INFO 37472 --- [           main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-08-20 23:28:53.491  INFO 37472 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-20 23:28:53.961  INFO 37472 --- [           main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService
+2019-08-20 23:28:54.350  INFO 37472 --- [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 14cb0a0d-e9d8-4acf-bcfd-45788c25f595
+
+2019-08-20 23:28:54.672  INFO 37472 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7db0565c, org.springframework.security.web.context.SecurityContextPersistenceFilter@7544a1e4, org.springframework.security.web.header.HeaderWriterFilter@3e587920, org.springframework.security.web.csrf.CsrfFilter@4362d7df, org.springframework.security.web.authentication.logout.LogoutFilter@345e5a17, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3113a37, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@600b0b7, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@54ec8cc9, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@70eecdc2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7957dc72, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4fdfa676, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@52eacb4b, org.springframework.security.web.session.SessionManagementFilter@24f43aa3, org.springframework.security.web.access.ExceptionTranslationFilter@200606de, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@d816dde]
+2019-08-20 23:28:54.960  INFO 37472 --- [           main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-08-20 23:28:54.999  INFO 37472 --- [           main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-08-20 23:28:55.050  INFO 37472 --- [           main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-08-20 23:28:55.224  INFO 37472 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_1
+2019-08-20 23:28:55.228  INFO 37472 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_2
+2019-08-20 23:28:55.232  INFO 37472 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingDELETE_1
+2019-08-20 23:28:55.235  INFO 37472 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_3
+2019-08-20 23:28:55.238  INFO 37472 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_4
+2019-08-20 23:28:55.242  INFO 37472 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_5
+2019-08-20 23:28:55.244  INFO 37472 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_6
+2019-08-20 23:28:55.247  INFO 37472 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_7
+2019-08-20 23:28:55.251  INFO 37472 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_8
+2019-08-20 23:28:55.254  INFO 37472 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_9
+2019-08-20 23:28:55.256  INFO 37472 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_10
+2019-08-20 23:28:55.259  INFO 37472 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_11
+2019-08-20 23:28:55.262  INFO 37472 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_12
+2019-08-20 23:28:55.265  INFO 37472 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_13
+2019-08-20 23:28:55.267  INFO 37472 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_14
+2019-08-20 23:28:55.270  INFO 37472 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_15
+2019-08-20 23:28:55.274  INFO 37472 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_16
+2019-08-20 23:28:55.276  INFO 37472 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_17
+2019-08-20 23:28:55.278  INFO 37472 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_18
+2019-08-20 23:28:55.282  INFO 37472 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_19
+2019-08-20 23:28:55.285  INFO 37472 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_20
+2019-08-20 23:28:55.287  INFO 37472 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_21
+2019-08-20 23:28:55.351  INFO 37472 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-08-20 23:28:55.355  INFO 37472 --- [           main] gaw.logbook.LogbookApplication           : Started LogbookApplication in 10.165 seconds (JVM running for 10.661)
+2019-08-20 23:28:55.508  INFO 37472 --- [gistrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Application registered itself as a973ff14be49
+2019-08-20 23:28:55.541  INFO 37472 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-20 23:28:55.543  INFO 37472 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-08-20 23:28:55.578  INFO 37472 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 33 ms
+2019-08-20 23:28:56.074  INFO 37472 --- [nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : jolokia-actuator-endpoint: No access restrictor found, access to any MBean is allowed
+2019-08-20 23:29:23.912  INFO 37472 --- [       Thread-3] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService
+2019-08-20 23:29:23.914  INFO 37472 --- [       Thread-3] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-20 23:29:23.917  INFO 37472 --- [       Thread-3] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-08-20 23:29:23.919  INFO 37472 --- [       Thread-3] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2019-08-20 23:29:23.924  INFO 37472 --- [       Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-08-20 23:29:23.933  INFO 37472 --- [       Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-08-20 23:29:55.543  INFO 36872 --- [           main] gaw.logbook.LogbookApplicationTests      : Starting LogbookApplicationTests on DESKTOP-46UUO87 with PID 36872 (started by galih in C:\Users\galih\Documents\projects\learn-to-code\logbook)
+2019-08-20 23:29:55.544  INFO 36872 --- [           main] gaw.logbook.LogbookApplicationTests      : No active profile set, falling back to default profiles: default
+2019-08-20 23:29:57.133  INFO 36872 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-08-20 23:29:57.163  INFO 36872 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18ms. Found 0 repository interfaces.
+2019-08-20 23:29:57.907  INFO 36872 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$4a290f10] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-20 23:29:57.992  INFO 36872 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.hateoas.config.HateoasConfiguration' of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$c9a95c42] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-20 23:29:58.258  INFO 36872 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-08-20 23:29:58.456  INFO 36872 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-08-20 23:29:58.571  INFO 36872 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-08-20 23:29:58.648  INFO 36872 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.10.Final}
+2019-08-20 23:29:58.651  INFO 36872 --- [           main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-08-20 23:29:58.821  INFO 36872 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-08-20 23:29:59.172  INFO 36872 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-08-20 23:29:59.442  INFO 36872 --- [           main] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@7d284f15'
+2019-08-20 23:29:59.447  INFO 36872 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-08-20 23:30:00.571  WARN 36872 --- [           main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-08-20 23:30:02.042  INFO 36872 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 17 endpoint(s) beneath base path '/actuator'
+2019-08-20 23:30:02.368  INFO 36872 --- [           main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-08-20 23:30:03.079  INFO 36872 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-20 23:30:03.457  INFO 36872 --- [           main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService
+2019-08-20 23:30:03.681  INFO 36872 --- [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 77ac7ba2-f620-44b3-8467-491a33318788
+
+2019-08-20 23:30:03.860  INFO 36872 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7ae0a26, org.springframework.security.web.context.SecurityContextPersistenceFilter@42ef5216, org.springframework.security.web.header.HeaderWriterFilter@4d770bcd, org.springframework.security.web.authentication.logout.LogoutFilter@33ccead, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5d94ac8a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7abcc0da, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5ddf5118, org.springframework.security.web.session.SessionManagementFilter@62c46e53, org.springframework.security.web.access.ExceptionTranslationFilter@6821c63c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2459333a]
+2019-08-20 23:30:04.202  INFO 36872 --- [           main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-08-20 23:30:04.238  INFO 36872 --- [           main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-08-20 23:30:04.292  INFO 36872 --- [           main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-08-20 23:30:04.500  INFO 36872 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_1
+2019-08-20 23:30:04.503  INFO 36872 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_2
+2019-08-20 23:30:04.506  INFO 36872 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingDELETE_1
+2019-08-20 23:30:04.509  INFO 36872 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_3
+2019-08-20 23:30:04.512  INFO 36872 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_4
+2019-08-20 23:30:04.514  INFO 36872 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_5
+2019-08-20 23:30:04.516  INFO 36872 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_6
+2019-08-20 23:30:04.519  INFO 36872 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_7
+2019-08-20 23:30:04.521  INFO 36872 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_8
+2019-08-20 23:30:04.526  INFO 36872 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_9
+2019-08-20 23:30:04.529  INFO 36872 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_10
+2019-08-20 23:30:04.532  INFO 36872 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_11
+2019-08-20 23:30:04.534  INFO 36872 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_12
+2019-08-20 23:30:04.536  INFO 36872 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_13
+2019-08-20 23:30:04.539  INFO 36872 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_14
+2019-08-20 23:30:04.543  INFO 36872 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_15
+2019-08-20 23:30:04.545  INFO 36872 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_16
+2019-08-20 23:30:04.547  INFO 36872 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_17
+2019-08-20 23:30:04.548  INFO 36872 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_18
+2019-08-20 23:30:04.550  INFO 36872 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_19
+2019-08-20 23:30:04.552  INFO 36872 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_20
+2019-08-20 23:30:04.554  INFO 36872 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_21
+2019-08-20 23:30:04.599  INFO 36872 --- [           main] gaw.logbook.LogbookApplicationTests      : Started LogbookApplicationTests in 9.472 seconds (JVM running for 10.443)
+2019-08-20 23:30:04.768  INFO 36872 --- [gistrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Application registered itself as a973ff14be49
+2019-08-20 23:30:04.787  INFO 36872 --- [       Thread-3] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService
+2019-08-20 23:30:04.787  INFO 36872 --- [       Thread-3] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-20 23:30:04.793  INFO 36872 --- [       Thread-3] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-08-20 23:30:04.793  INFO 36872 --- [       Thread-3] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2019-08-20 23:30:04.805  WARN 36872 --- [       Thread-3] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-199]
+2019-08-20 23:30:04.806  INFO 36872 --- [       Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-08-20 23:30:04.810  INFO 36872 --- [       Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-08-20 23:30:12.645  INFO 34772 --- [           main] gaw.logbook.LogbookApplication           : Starting LogbookApplication v0.0.1-SNAPSHOT on DESKTOP-46UUO87 with PID 34772 (C:\Users\galih\Documents\projects\learn-to-code\logbook\target\logbook-0.0.1-SNAPSHOT.jar started by galih in C:\Users\galih\Documents\projects\learn-to-code\logbook)
+2019-08-20 23:30:12.654  INFO 34772 --- [           main] gaw.logbook.LogbookApplication           : No active profile set, falling back to default profiles: default
+2019-08-20 23:30:14.288  INFO 34772 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-08-20 23:30:14.322  INFO 34772 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19ms. Found 0 repository interfaces.
+2019-08-20 23:30:14.968  INFO 34772 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c747b511] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-20 23:30:15.019  INFO 34772 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.hateoas.config.HateoasConfiguration' of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$46c80243] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-20 23:30:15.890  INFO 34772 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-08-20 23:30:15.928  INFO 34772 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-20 23:30:15.930  INFO 34772 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-20 23:30:16.048  INFO 34772 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-08-20 23:30:16.049  INFO 34772 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3344 ms
+2019-08-20 23:30:17.153  INFO 34772 --- [           main] o.s.b.a.e.web.ServletEndpointRegistrar   : Registered '/actuator/jolokia' to jolokia-actuator-endpoint
+2019-08-20 23:30:17.284  INFO 34772 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-08-20 23:30:17.519  INFO 34772 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-08-20 23:30:17.604  INFO 34772 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-08-20 23:30:17.681  INFO 34772 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.10.Final}
+2019-08-20 23:30:17.685  INFO 34772 --- [           main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-08-20 23:30:17.866  INFO 34772 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-08-20 23:30:18.191  INFO 34772 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-08-20 23:30:18.437  INFO 34772 --- [           main] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@a202ccb'
+2019-08-20 23:30:18.443  INFO 34772 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-08-20 23:30:19.298  WARN 34772 --- [           main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-08-20 23:30:19.717  INFO 34772 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 17 endpoint(s) beneath base path '/actuator'
+2019-08-20 23:30:20.294  INFO 34772 --- [           main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-08-20 23:30:20.605  INFO 34772 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-20 23:30:21.053  INFO 34772 --- [           main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService
+2019-08-20 23:30:21.370  INFO 34772 --- [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: b693a813-c127-4325-8fb4-ae2d9c4c0e5e
+
+2019-08-20 23:30:21.659  INFO 34772 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@c41709a, org.springframework.security.web.context.SecurityContextPersistenceFilter@5ea502e0, org.springframework.security.web.header.HeaderWriterFilter@4fdfa676, org.springframework.security.web.authentication.logout.LogoutFilter@133e019b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@473b3b7a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5ed190be, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7db0565c, org.springframework.security.web.session.SessionManagementFilter@5be82d43, org.springframework.security.web.access.ExceptionTranslationFilter@7544a1e4, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@213e3629]
+2019-08-20 23:30:21.959  INFO 34772 --- [           main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-08-20 23:30:21.994  INFO 34772 --- [           main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-08-20 23:30:22.048  INFO 34772 --- [           main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-08-20 23:30:22.256  INFO 34772 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_1
+2019-08-20 23:30:22.259  INFO 34772 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_2
+2019-08-20 23:30:22.264  INFO 34772 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingDELETE_1
+2019-08-20 23:30:22.268  INFO 34772 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_3
+2019-08-20 23:30:22.271  INFO 34772 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_4
+2019-08-20 23:30:22.273  INFO 34772 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_5
+2019-08-20 23:30:22.275  INFO 34772 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_6
+2019-08-20 23:30:22.277  INFO 34772 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_7
+2019-08-20 23:30:22.280  INFO 34772 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_8
+2019-08-20 23:30:22.283  INFO 34772 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_9
+2019-08-20 23:30:22.285  INFO 34772 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_10
+2019-08-20 23:30:22.292  INFO 34772 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_11
+2019-08-20 23:30:22.294  INFO 34772 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_12
+2019-08-20 23:30:22.296  INFO 34772 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_13
+2019-08-20 23:30:22.298  INFO 34772 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_14
+2019-08-20 23:30:22.300  INFO 34772 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_15
+2019-08-20 23:30:22.307  INFO 34772 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_16
+2019-08-20 23:30:22.310  INFO 34772 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_17
+2019-08-20 23:30:22.313  INFO 34772 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_18
+2019-08-20 23:30:22.315  INFO 34772 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_19
+2019-08-20 23:30:22.317  INFO 34772 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_20
+2019-08-20 23:30:22.319  INFO 34772 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_21
+2019-08-20 23:30:22.384  INFO 34772 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-08-20 23:30:22.389  INFO 34772 --- [           main] gaw.logbook.LogbookApplication           : Started LogbookApplication in 10.242 seconds (JVM running for 10.759)
+2019-08-20 23:30:22.520  INFO 34772 --- [gistrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Application registered itself as a973ff14be49
+2019-08-20 23:30:22.558  INFO 34772 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-20 23:30:22.558  INFO 34772 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-08-20 23:30:22.581  INFO 34772 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 21 ms
+2019-08-20 23:36:13.422  WARN 34772 --- [gistrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Failed to register application as Application(name=spring-boot-application, managementUrl=http://localhost:8080/actuator, healthUrl=http://localhost:8080/actuator/health, serviceUrl=http://localhost:8080/) at spring-boot-admin ([http://localhost:8090/instances]): I/O error on POST request for "http://localhost:8090/instances": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect. Further attempts are logged on DEBUG level
+2019-08-20 23:36:14.030  INFO 34772 --- [       Thread-3] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService
+2019-08-20 23:36:14.030  INFO 34772 --- [       Thread-3] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-20 23:36:14.036  INFO 34772 --- [       Thread-3] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-08-20 23:36:14.036  INFO 34772 --- [       Thread-3] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2019-08-20 23:36:14.041  INFO 34772 --- [       Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-08-20 23:36:14.047  INFO 34772 --- [       Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

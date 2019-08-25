@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>    
+    <properties resource="myBatis/jdbc.properties" /> 
+    <settings>
+        <setting name="defaultExecutorType" value="REUSE"/>
+        <setting name="useColumnLabel" value="false"/>
+        <setting name="lazyLoadingEnabled" value="false"/>
+        <setting name="defaultStatementTimeout" value="25"/>
+        <setting name="jdbcTypeForNull" value="NULL"/>
+        <setting name="localCacheScope" value="STATEMENT"/>
+    </settings>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driverClassName}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+                <property name="driver.defaultRowPrefetch" value="256"/>
+                <property name="poolMaximumActiveConnections" value="10"/>
+            </dataSource>
+<!--            <dataSource type="JNDI">
+                <property name="data_source" value="oracle.jdbc.driver.OracleDriver"/>
+            </dataSource>-->
+        </environment>
+    </environments>
+    
+    <mappers>
+        <mapper resource= "myBatis/kota_id.xml"/>
+    </mappers>
+    
+</configuration>

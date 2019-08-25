@@ -1,0 +1,45 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kotaId">
+	<resultMap id="kotaIdMap" type="gaw.logbook.kotaid.KotaId">
+		<id column="ID" property="id" />
+		<result column="KOTA" property="kota"></result>
+		<result column="PROVINSI" property="provinsi"></result>
+		<result column="BPS_2010" property="bps2010"></result>
+		<result column="KEMENDAGRI_2015" property="kemendagri2015"></result>
+	</resultMap>
+
+	<select id="getListKotaIds" resultMap="kotaIdMap">
+		select * from GALIH.KOTA_ID
+	</select>
+	
+	<select id="getKotaIdById" parameterType="int" resultMap="kotaIdMap">
+		select * from GALIH.KOTA_ID where ID=#{userID}
+	</select>
+	
+	<insert id="saveKotaId" parameterType="gaw.logbook.kotaid.KotaId">
+		insert into GALIH.KOTA_ID (kota, provinsi, bps_2010, kemendagri_2015) values
+			(#{kota}, #{provinsi}, #{bps2010}, #{kemendagri2015})
+	</insert>
+	
+	<select id="saveKotaIdWithReturningId" parameterType="gaw.logbook.kotaid.KotaId" resultType="int">
+		insert into GALIH.KOTA_ID (kota, provinsi, bps_2010, kemendagri_2015) values
+			(#{kota}, #{provinsi}, #{bps2010}, #{kemendagri2015})
+		RETURNING id
+	</select>
+	
+	<delete id="deleteKotaIdById" parameterType="int">
+		delete from GALIH.KOTA_ID where ID=#{id}
+	</delete>
+	
+	<select id="deleteKotaIdByIdWithReturningObject" parameterType="int" resultMap="kotaIdMap">
+		delete from GALIH.KOTA_ID where ID=#{id}
+		RETURNING *
+	</select>
+	
+	<select id="deleteKotaIdByKotaWithReturningList" parameterType="String" resultMap="kotaIdMap">
+		delete from GALIH.KOTA_ID where KOTA=#{kota}
+		RETURNING *
+	</select>
+</mapper>
