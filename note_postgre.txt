@@ -1,0 +1,59 @@
+habis instal postgresql
+(password: postgre123 port: 5432)
+help: >psql --help
+
+buka cmd, masuk ke postgres:
+>psql -U postgres
+input password, done
+
+bikin user baru & db baru
+CREATE DATABASE yourdbname;
+CREATE USER youruser WITH ENCRYPTED PASSWORD 'yourpass';
+GRANT ALL PRIVILEGES ON DATABASE yourdbname TO youruser;
+
+>create user galih with encrypted password 'galih123';
+>create database tesdb1;
+>grant all privileges on database tesdb1 to galih;
+>create schema galih;
+
+untuk cek list user >\du
+list db >\l
+list tabel at current db >\dt
+list all schema >\dn
+exit >\q
+
+----------------------------------------
+In order to be able to access PostgreSQL using the new database, you have to edit the pg_hba.conf file (sample, modify to match your network settings):
+
+host myowndb myusername 192.168.0.0/16 md5
+Now you restart the PostgreSQL server from the Services tab in Administrative tools on the Control Panel.
+
+Then you can log in to your new database:
+
+psql -u myusername -d myowndb
+Or use other clients like pgAdminIII.
+-----------------------------------------
+SELECT current_user;  -- user name of current execution context
+SELECT session_user;  -- session user name
+-----------------------------------------
+CREATE TABLE COMPANY(
+   ID INT PRIMARY KEY     NOT NULL,
+   NAME           TEXT    NOT NULL,
+   AGE            INT     NOT NULL,
+   ADDRESS        CHAR(50),
+   SALARY         REAL
+);
+CREATE TABLE DEPARTMENT(
+   ID INT PRIMARY KEY      NOT NULL,
+   DEPT           CHAR(50) NOT NULL,
+   EMP_ID         INT      NOT NULL
+);
+---------------------------------------
+>drop table BLOG;
+>CREATE TABLE BLOG(
+   ID SERIAL PRIMARY KEY      NOT NULL CHECK (ID>0),
+   TITLE          VARCHAR(500) NOT NULL,
+   CONTENT        VARCHAR(5000)      NOT NULL
+);
+>select * from blog;
+>INSERT INTO BLOG (TITLE, CONTENT) VALUES ( 'TES 2', 'TES CONTENT ');

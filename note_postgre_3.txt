@@ -1,0 +1,28 @@
+Section 16. PostgreSQL Data Types in Depth
+
+Boolean: TRUE, FALSE, NULL
+> true-false
+> 't'-'f'
+> 'true'-'false'
+> 'y'-'n'
+> 'yes'-'no'
+> '1'-'0'
+>> CREATE TABLE stock_availability (
+>>    product_id INT NOT NULL PRIMARY KEY,
+>>    available BOOLEAN NOT NULL
+>> );
+
+CHAR, VARCHAR, TEXT
+
+
+NUMERIC
+Integer
+DATE
+Timestamp
+Interval
+TIME
+UUID
+Array
+hstore
+JSON
+User-defined data types
