@@ -1,28 +1,182 @@
 Section 16. PostgreSQL Data Types in Depth
 
-Boolean: TRUE, FALSE, NULL
-> true-false
-> 't'-'f'
-> 'true'-'false'
-> 'y'-'n'
-> 'yes'-'no'
-> '1'-'0'
->> CREATE TABLE stock_availability (
->>    product_id INT NOT NULL PRIMARY KEY,
->>    available BOOLEAN NOT NULL
+----- Boolean: TRUE, FALSE, NULL -----
+(1 BYTE)
+true-false
+'t'-'f'
+'true'-'false'
+'y'-'n'
+'yes'-'no'
+'1'-'0'
+> CREATE TABLE stock_availability (
+>    product_id INT NOT NULL PRIMARY KEY,
+>    available BOOLEAN NOT NULL
+character varying(n), varchar(n) : variable-length with limit
+> );
+
+----- CHAR, VARCHAR, TEXT -----
+character(n), char(n) : fixed-length, blank padded
+text, varchar : variable unlimited length
+> CREATE TABLE character_tests (
+>    id serial PRIMARY KEY,
+>    x CHAR (1),
+>    y VARCHAR (10),
+>    z TEXT
+> );
+
+----- NUMERIC -----
+NUMERIC(precision, scale)
+NUMERIC(precision)
+NUMERIC
+If precision is not required, you should not use the NUMERIC type because the calculation on NUMERIC values is slower than integers, floats and double precision
+> CREATE TABLE IF NOT EXISTS products (
+>    id serial PRIMARY KEY,
+>    name VARCHAR NOT NULL,
+>    price NUMERIC (5, 2)
+> );
+
+----- Integer -----
+SMALLINT	:	2 bytes	:	-32,768		+32,767
+INTEGER		:	4 bytes	:	-2,147,483,648	+2,147,483,647
+BIGINT		:	8 bytes	:	-9,223,372,036,854,775,808	+9,223,372,036,854,775,807
+> CREATE TABLE books (
+>    book_id SERIAL PRIMARY KEY,
+>    title VARCHAR (255) NOT NULL,
+>    pages SMALLINT NOT NULL CHECK (pages > 0)
+> );
+>> CREATE TABLE cities (
+>>     city_id serial PRIMARY KEY,
+>>     city_name VARCHAR (255) NOT NULL,
+>>     population INT NOT NULL CHECK (population >= 0)
 >> );
 
-CHAR, VARCHAR, TEXT
+----- DATE -----
+4 bytes : yyyy-mm-dd
+> CREATE TABLE documents (
+>    document_id serial PRIMARY KEY,
+>    header_text VARCHAR (255) NOT NULL,
+>    posting_date DATE NOT NULL DEFAULT CURRENT_DATE
+> );
+-current date => SELECT NOW()::date; or SELECT CURRENT_DATE;
+-Output a PostgreSQL date value in a specific format 	> SELECT TO_CHAR(NOW() :: DATE, 'Mon dd, yyyy');
+-Get the interval between two dates 		> SELECT first_name, last_name, now() - hire_date as diff FROM employees;
+-Calculate ages in years, months, and days		> SELECT employee_id, first_name, last_name, AGE(birth_date) FROM employees;
+												> SELECT employee_id, first_name, last_name, age('2015-01-01',birth_date) FROM employees;
+		
+-Extract year, quarter, month, week, day from a date value
+ > SELECT
+ >    employee_id,
+ >    first_name,
+ >    last_name,
+ >    EXTRACT (YEAR FROM birth_date) AS YEAR,
+ >    EXTRACT (MONTH FROM birth_date) AS MONTH,
+ >    EXTRACT (DAY FROM birth_date) AS DAY
+ > FROM employees;
 
 
-NUMERIC
-Integer
-DATE
-Timestamp
-Interval
-TIME
-UUID
-Array
-hstore
-JSON
-User-defined data types
+----- Timestamp -----
+timestamp
+timestamptz
+> CREATE TABLE timestamp_demo (ts TIMESTAMP, tstz TIMESTAMPTZ);
+> SET timezone = 'America/Los_Angeles';
+> SHOW TIMEZONE;
+-Getting the current time	> SELECT NOW(); or 	SELECT CURRENT_TIMESTAMP; or select CURRENT_TIME; (Note that both CURRENT_TIMESTAMP and CURRENT_TIME return the current time with time zone.)
+-To get the time of day in the string format	> SELECT TIMEOFDAY();
+-To convert a timestamp to another time zone	> SELECT timezone('America/New_York',now());
+												> SELECT timezone('America/New_York','2016-06-01 00:00'::timestamptz);
+
+----- Interval -----
+16 bytes: -178,000,000 years - 178,000,000 years
+> interval '2 months ago';
+> interval '3 hours 20 minutes';
+> SELECT now(), now() - INTERVAL '1 year 3 hours 20 minutes' AS "3 hours 20 minutes ago of last year";
+
+----- TIME -----
+8 bytes : 00:00:00 - 24:00:00
+> CREATE TABLE shifts (
+>     id serial PRIMARY KEY,
+>     shift_name VARCHAR NOT NULL,
+>     start_at TIME NOT NULL,
+>     end_at TIME NOT NULL
+> );  
+
+column TIME with time zone
+12 bytes : 00:00:00+1459 - 24:00:00-1459
+> SELECT CURRENT_TIME; or SELECT LOCALTIME;
+> SELECT
+>     LOCALTIME,
+>     EXTRACT (HOUR FROM LOCALTIME) as hour,
+>     EXTRACT (MINUTE FROM LOCALTIME) as minute, 
+>     EXTRACT (SECOND FROM LOCALTIME) as second,
+>     EXTRACT (milliseconds FROM LOCALTIME) as milliseconds; 
+-Arithmetic operations on time values
+> SELECT time '10:00' - time '02:00';
+> SELECT LOCALTIME + interval '2 hours';
+
+----- UUID -----
+UUID stands for Universal Unique Identifier defined by RFC 4122 and other related standard.
+a UUID is a sequence of 32 digits of hexadecimal digits represented in groups separated by hyphens
+-To install the uuid-ossp module	> CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-To generate the UUID values based on the combination of computer’s MAC address, current timestamp, and a random value	> SELECT uuid_generate_v1();
+-to generate a UUID value solely based on random numbers	> SELECT uuid_generate_v4();
+> CREATE TABLE contacts (
+>     contact_id uuid DEFAULT uuid_generate_v4 (),
+>     first_name VARCHAR NOT NULL,
+>     last_name VARCHAR NOT NULL,
+>     email VARCHAR NOT NULL,
+>     phone VARCHAR,
+>     PRIMARY KEY (contact_id)
+> );
+
+----- Array -----
+Every data type has its own companion array type e.g., integer has an integer[] array type, character has character[] array type, etc.
+> CREATE TABLE contacts (
+>    id serial PRIMARY KEY,
+>    name VARCHAR (100),
+>    phones TEXT []
+> );
+>> INSERT INTO contacts (name, phones) VALUES ('John Doe', ARRAY [ '(408)-589-5846', '(408)-589-5555' ]);
+>> INSERT INTO contacts (name, phones)
+>> VALUES 	( 'Lily Bush', '{"(408)-589-5841"}' ),
+>>			( 'William Gate', '{"(408)-589-5842","(408)-589-58423"}' );
+> SELECT name, phones [ 1 ] FROM contacts;
+> SELECT name, phones FROM contacts WHERE '(408)-589-5555' = ANY (phones);
+> UPDATE contacts SET phones [ 2 ] = '(408)-589-5843' WHERE ID = 3;
+> UPDATE contacts SET phones = '{"(408)-589-5843"}' WHERE ID = 3;
+-Expands Arrays	> SELECT name, unnest(phones) FROM contacts;
+
+----- hstore -----
+The hstore module implements hstore data type for storing key-value pairs in a single value
+-Enable PostgreSQL hstore extension	> CREATE EXTENSION hstore;
+> CREATE TABLE books (
+>    id serial primary key,
+>    title VARCHAR (255),
+>    attr hstore
+> );
+>> INSERT INTO books (title, attr)
+>> VALUES
+>>    (
+>>       'PostgreSQL Tutorial',
+>>       '"paperback" => "243",
+>>        "publisher" => "postgresqltutorial.com",
+>>        "language"  => "English",
+>>        "ISBN-13"   => "978-1449370000",
+>>        "weight"    => "11.2 ounces"'
+>>    );
+-Query data from an hstore column	> SELECT attr FROM books;
+-Query value for a specific key		> SELECT attr -> 'ISBN-13' AS isbn FROM books;
+-Use value in the WHERE clause		> SELECT attr -> 'weight' AS weight FROM books WHERE attr -> 'ISBN-13' = '978-1449370000';
+-Add key-value pairs to existing rows	> UPDATE books SET attr = attr || '"freeshipping"=>"yes"' :: hstore;
+-Update existing key-value pair			> UPDATE books SET attr = attr || '"freeshipping"=>"no"' :: hstore;
+-Remove existing key-value pair			> UPDATE books SET attr = delete(attr, 'freeshipping');
+-Check for a specific key in hstore column	> SELECT title, attr->'publisher' as publisher, attr FROM books WHERE attr ? 'publisher';
+-Check for a key-value pair			> SELECT title FROM books WHERE attr @> '"weight"=>"11.2 ounces"' :: hstore;
+-Query rows that contain multiple specified keys	> SELECT title FROM books WHERE attr ?& ARRAY [ 'language', 'weight' ]; or SELECT title FROM books WHERE attr ?| ARRAY [ 'language', 'weight' ];
+-Get all keys from an hstore column		> SELECT akeys (attr) FROM books; or SELECT skeys (attr) FROM books;
+-Get all values from an hstore column	> SELECT avals (attr) FROM books; or SELECT svals (attr) FROM books;
+-Convert hstore data to JSON		> SELECT title, hstore_to_json (attr) json FROM books;
+-Convert hstore data to sets		> SELECT title, (EACH(attr) ).* FROM books;
+
+----- JSON -----
+
+----- User-defined data types -----
