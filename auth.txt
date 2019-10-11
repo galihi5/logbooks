@@ -1,0 +1,212 @@
+drop table AUTH.MENU;
+CREATE TABLE AUTH.MENU (
+	menu_id varchar(10) PRIMARY KEY,
+	parent_id varchar(10) REFERENCES auth.menu(menu_id) on delete restrict on update restrict,
+	path varchar(50),
+	collapse boolean NOT null default FALSE,
+	name varchar(50) NOT null,
+	icon varchar(30),
+	state varchar(30),
+	mini varchar(10),
+	component varchar(30),
+	layout varchar(30),
+	sort varchar(10),
+	usrcrt varchar(15) NOT null default 'SYSTEM',
+	dtmcrt timestamp NOT null default NOW(),
+	usrupd varchar(15) NOT null default 'SYSTEM',
+	dtmupd timestamp NOT null default NOW()
+);
+
+delete from AUTH.MENU;
+insert into AUTH.MENU (menu_id, parent_id, path, collapse, name, icon, state, mini, component, layout, sort)
+values
+	('DSB', null, '/dashboard', false, 'Dashboard', 'DashboardIcon', null, null, 'Dashboard', '/admin', '01'),
+	('PGS', null, null, true, 'Pages', 'Image', 'PageCollapse', null, null, null, '02'),
+	('PRC', 'PGS', '/pricing-page', false, 'Pricing Page', null, null, 'PP', 'PricingPage', '/auth', '021'),
+	('TML', 'PGS', '/timeline-page', false, 'Timeline Page', null, null, 'T', 'TimelinePage', '/admin', '022'),
+	('LGN', 'PGS', '/login-page', false, 'Login Page', null, null, 'L', 'LoginPage', '/auth', '023'),
+	('CMP', null, null, true, 'Components', 'Apps', 'ComponentsCollapse', null, null, null, '03'),
+	('BTN', 'CMP', '/buttons', false, 'Buttons', null, null, 'B', 'Buttons', '/admin', '031'),
+	('GRD', 'CMP', '/grid-system', false, 'Grid System', null, null, 'GS', 'GridSystem', '/admin', '032'),
+	('WDG', null, '/widgets', false, 'Widgets', 'WidgetsIcon', null, null, 'Widget', '/admin', '04')
+	;
+	
+select * from AUTH.MENU order by sort;
+select menu_id, name, path from AUTH.MENU where parent_id is null order by sort;
+select menu_id, name, path from AUTH.MENU where parent_id='AAA' order by sort;
+----------------------------------------------------------------------------------------------
+drop table AUTH.ROLE;
+CREATE TABLE AUTH.ROLE (
+	role_id varchar(15) PRIMARY KEY,
+	role_idx int,
+	role_name varchar (50) NOT NULL,
+	parent_id varchar(15) REFERENCES auth.role(role_id) on delete restrict on update restrict,
+	is_active boolean NOT null default TRUE,	
+	menu_bit_mask int,
+	sort varchar(10),
+	usrcrt varchar(30),
+	dtmcrt timestamp,
+	usrupd varchar(30),
+	dtmupd timestamp
+);
+
+delete from AUTH.role;
+insert into AUTH.role (role_id, role_idx, role_name, parent_id, menu_bit_mask, sort, usrcrt, dtmcrt, usrupd, dtmupd)
+values
+	('X', 0, 'Role X', null, null, '01', 'SYSTEM', NOW(), 'SYSTEM', NOW()),
+	('Y', 1, 'Role Y', null, null, '02', 'SYSTEM', NOW(), 'SYSTEM', NOW()),
+	('Z', 2, 'Role Z', null, null, '03', 'SYSTEM', NOW(), 'SYSTEM', NOW())
+	;
+
+select * from AUTH.ROLE;
+
+----------------------------------------------------------------------------------------------
+CREATE TABLE AUTH.USER (
+	user_id varchar(30) PRIMARY KEY,
+	user_name varchar(50) NOT NULL,
+	role_bit_mask int,
+	kode_cabang varchar(4),
+	is_active boolean NOT null default TRUE,
+	is_loggedin boolean NOT null default false,
+	last_loggedin timestamp,
+	usrcrt varchar(30),
+	dtmcrt timestamp,
+	usrupd varchar(30),
+	dtmupd timestamp
+);
+
+select * from AUTH.USER;
+
+delete from AUTH.user;
+insert into AUTH.user (user_id, user_name, role_bit_mask, kode_cabang, usrcrt, dtmcrt, usrupd, dtmupd)
+values 
+	(upper('u001'), 'User 001', 1, '0001', 'SYSTEM', NOW(), 'SYSTEM', NOW()),
+	(upper('u002'), 'User 002', 2, '0002', 'SYSTEM', NOW(), 'SYSTEM', NOW()),
+	(upper('u003'), 'User 003', 3, '0003', 'SYSTEM', NOW(), 'SYSTEM', NOW()),
+	(upper('u004'), 'User 004', 4, '0004', 'SYSTEM', NOW(), 'SYSTEM', NOW()),
+	(upper('u005'), 'User 005', 5, '0005', 'SYSTEM', NOW(), 'SYSTEM', NOW()),
+	(upper('u006'), 'User 006', 6, '0006', 'SYSTEM', NOW(), 'SYSTEM', NOW()),
+	(upper('u007'), 'User 007', 7, '0007', 'SYSTEM', NOW(), 'SYSTEM', NOW()),
+	(upper('u008'), 'User 008', 8, '0008', 'SYSTEM', NOW(), 'SYSTEM', NOW()),
+	(upper('u009'), 'User 009', 9, '0009', 'SYSTEM', NOW(), 'SYSTEM', NOW()),
+	(upper('u010'), 'User 010', 10, '0010', 'SYSTEM', NOW(), 'SYSTEM', NOW())
+;
+
+select * from (select user_id, user_name, role_bit_mask, kode_cabang from AUTH.user where user_id='u007') A
+	right join (select role_id, role_idx, power(2, role_idx)::INTEGER as idx_power, role_name from AUTH.role) B on (A.role_bit_mask & B.idx_power)>0
+order by A.user_id, B.role_id;
+--
+
+
+select row_to_json(m)
+from (
+	select menu_id, name, path from AUTH.menu order by sort
+) m;
+
+select role_id, role_idx, power(2, role_idx), 2^role_idx as idx_power,role_name from AUTH.role;
+
+select * from AUTH.menu;
+select * from AUTH.role;
+select * from AUTH.user;
+
+--update AUTH.role set menu_bit_mask=123 where role_id='X';
+--update AUTH.role set menu_bit_mask=17 where role_id='Y';
+--update AUTH.role set menu_bit_mask=7 where role_id='Z';
+				
+-----------------------------------------------------------------------------------------------------------------
+select array_agg(row_to_json(T)) as content from 
+	(select V.role_id, U.role_name, V.role_content from
+		(select role_id, array_agg(row_to_json(W)) as role_content from
+			(select Y.role_id, Y.parent_id, Z.NAME, Y.menu_child
+				from (select role_id, parent_id, sort_role, array_to_json(array_agg(row_to_json(X))) as menu_child
+							from (
+								select B.role_id, A.parent_id, A.menu_id, A.name, A.path, B.sort_role, A.sort_menu from
+									(select menu_id, menu_idx, power(2, menu_idx)::INT as menu_power, name, path, parent_id, sort as sort_menu from AUTH.menu where parent_id is not null order by sort) A
+										join (
+											select role_id, role_name, menu_bit_mask, sort_role from
+												(select role_bit_mask from AUTH.user where is_active and user_id=upper('u005')) P
+													join 
+														(select role_id, role_name, menu_bit_mask, power(2, role_idx)::INT as role_power, sort as sort_role from AUTH.role where is_active) Q
+													on (P.role_bit_mask & Q.role_power > 0)						
+										) B on (A.menu_power & B.menu_bit_mask > 0)
+								order by B.sort_role, A.sort_menu
+							) X
+						group by
+							X.role_id, X.parent_id, X.sort_role
+						) Y join AUTH.MENU Z on Y.parent_id=Z.menu_id
+					order by Y.sort_role, Z.sort
+				) W	
+			group by W.role_id
+		) V
+	join AUTH.role U on (V.role_id=U.role_id)
+) T;
+			
+
+select menu_id, parent_id, path, collapse, name, icon, state, mini, component, layout, sort from AUTH.MENU order by sort;
+select menu_id, parent_id, path, collapse, name, icon, state, mini, component, layout, sort from AUTH.MENU where parent_id is not null order by sort;
+
+select menu_id, path, collapse, name, icon, state, component, layout from AUTH.MENU where parent_id is null order by sort;
+
+select
+	parent_id,
+	array_to_json(array_agg(row_to_json(A))) as views
+from
+	(
+	select
+		menu_id,
+		parent_id,
+		path,
+		collapse,
+		name,
+		mini,
+		component,
+		layout
+	from
+		AUTH.MENU
+	where
+		parent_id is not null
+	order by
+		sort) A
+	group by A.parent_id	
+		;
+					
+select array_to_json(array_agg(row_to_json(DR))) as dashRoutes
+		from
+			(
+select parent.*, Child.views from (
+	(
+		select menu_id, path, collapse, name, icon, state, component, layout, sort from AUTH.MENU where parent_id is null
+	) Parent
+	left outer join (
+		select parent_id, array_to_json(array_agg(row_to_json(A))) as views
+		from
+			(
+			select
+				menu_id,
+				parent_id,
+				path,
+				collapse,
+				name,
+				mini,
+				component,
+				layout
+			from
+				AUTH.MENU
+			where
+				parent_id is not null
+			order by
+				sort) A
+			group by A.parent_id	
+	) Child
+	on parent.menu_id=child.parent_Id)
+order by parent.sort) DR;
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
