@@ -1,16 +1,71 @@
-drop table AUTH.MENU;
-CREATE TABLE AUTH.MENU (
-	menu_id varchar(10) PRIMARY KEY,
-	parent_id varchar(10) REFERENCES auth.menu(menu_id) on delete restrict on update restrict,
+drop table AUTH.COMPONENT;
+CREATE TABLE AUTH.COMPONENT (
+	component_id varchar(10) PRIMARY KEY,
 	path varchar(50),
-	collapse boolean NOT null default FALSE,
+	is_parent boolean NOT null default FALSE,
 	name varchar(50) NOT null,
 	icon varchar(30),
 	state varchar(30),
 	mini varchar(10),
 	component varchar(30),
 	layout varchar(30),
+	IS_ACTIVE boolean NOT null default TRUE,
+	usrcrt varchar(15) NOT null default 'SYSTEM',
+	dtmcrt timestamp NOT null default NOW(),
+	usrupd varchar(15) NOT null default 'SYSTEM',
+	dtmupd timestamp NOT null default NOW()
+);
+
+delete from AUTH.COMPONENT;
+insert into AUTH.COMPONENT 
+	(component_id, path, is_parent, name, icon, state, mini, component, layout)
+values
+	('DSB', '/dashboard', false, 'Dashboard', 'DashboardIcon', null, null, 'Dashboard', '/admin'),	
+	('PGS', null, true, 'Pages', 'Image', 'PageCollapse', null, null, null),	
+	('PRC', '/pricing-page', false, 'Pricing Page', null, null, 'PP', 'PricingPage', '/auth'),
+	('TML', '/timeline-page', false, 'Timeline Page', null, null, 'T', 'TimelinePage', '/admin'),
+	('LGN', '/login-page', false, 'Login Page', null, null, 'L', 'LoginPage', '/auth'),
+	('REG', '/register-page', false, 'Register Page', null, null, 'R', 'RegisterPage', '/auth'),
+	('LCK', '/lock-screen-page', false, 'Lock Screen Page', null, null, 'LS', 'LockScreenPage', '/auth'),
+	('PFL', '/user-page', false, 'User Profile', null, null, 'UP', 'UserProfile', '/admin'),
+	('ERR', '/error-page', false, 'Error Page', null, null, 'E', 'ErrorPage', '/auth'),	
+	('CMP', null, true, 'Components', 'Apps', 'ComponentsCollapse', null, null, null),
+	('MLC', null, true, 'Multi Level Collapse', null, 'multiCollapse', 'MC', null, null),
+	('BTN', '/buttons', false, 'Buttons', null, null, 'B', 'Buttons', '/admin'),
+	('GRD', '/grid-system', false, 'Grid System', null, null, 'GS', 'GridSystem', '/admin'),
+	('PNL', '/panels', false, 'Panels', null, null, 'P', 'Panels', '/admin'),
+	('SAL', '/sweet-alert', false, 'Sweet Alert', null, null, 'SA', 'SweetAlert', '/admin'),
+	('NTF', '/notifications', false, 'Notifications', null, null, 'N', 'Notifications', '/admin'),
+	('ICO', '/icons', false, 'Icons', null, null, 'I', 'Icons', '/admin'),
+	('TYP', '/typography', false, 'Typography', null, null, 'T', 'Typography', '/admin'),		
+	('FRM', null, true, 'Forms', 'content_paste', 'formsCollapse', null, null, null),
+	('RGF', '/regular-forms', false, 'Regular Forms', null, null, 'RF', 'RegularForms', '/admin'),
+	('XTF', '/extended-forms', false, 'Extended Forms', null, null, 'EF', 'ExtendedForms', '/admin'),
+	('VLF', '/validation-forms', false, 'Validation Forms', null, null, 'VF', 'ValidationForms', '/admin'),
+	('WZD', '/wizard', false, 'Wizard', null, null, 'W', 'Wizard', '/admin'),	
+	('TBL', null, true, 'Tables', 'GridOn', 'tablesCollapse', null, null, null),
+	('RGT', '/regular-tables', false, 'Regular Tables', null, null, 'RT', 'RegularTables', '/admin'),	
+	('XTT', '/extended-tables', false, 'Extended Tables', null, null, 'ET', 'ExtendedTables', '/admin'),	
+	('RCT', '/react-tables', false, 'React Tables', null, null, 'RT', 'ReactTables', '/admin'),		
+	('MAP', null, true, 'Maps', 'Place', 'mapsCollapse', null, null, null),
+	('GLM', '/google-maps', false, 'Google Maps', null, null, 'GM', 'GoogleMaps', '/admin'),
+	('FSM', '/full-screen-maps', false, 'Full Screen Map', null, null, 'FSM', 'FullScreenMap', '/admin'),
+	('VCM', '/vector-maps', false, 'Vector Map', null, null, 'VM', 'VectorMap', '/admin'),	
+	('WDG', '/widgets', false, 'Widgets', 'WidgetsIcon', null, null, 'Widgets', '/admin'),
+	('CRT', '/charts', false, 'Charts', 'Timeline', null, null, 'Charts', '/admin'),
+	('CAL', '/calendar', false, 'Calendar', 'DateRange', null, null, 'Calendar', '/admin'),
+	('GAW', '/gawcustompage', false, 'GAW Custom Page', 'AndroidOutlined', null, null, 'ReactTablesGaw', '/admin')
+	;
+	
+select * from AUTH.COMPONENT order by 1;
+----------------------------------------------------------------------------------------------
+
+drop table AUTH.MENU;
+CREATE TABLE AUTH.MENU (
+	menu_id varchar(10) PRIMARY key REFERENCES auth.component(component_id) on delete restrict on update restrict,
+	parent_id varchar(10) REFERENCES auth.component(component_id) on delete restrict on update restrict,
 	sort varchar(10),
+	IS_ACTIVE boolean NOT null default TRUE,
 	usrcrt varchar(15) NOT null default 'SYSTEM',
 	dtmcrt timestamp NOT null default NOW(),
 	usrupd varchar(15) NOT null default 'SYSTEM',
@@ -18,22 +73,61 @@ CREATE TABLE AUTH.MENU (
 );
 
 delete from AUTH.MENU;
-insert into AUTH.MENU (menu_id, parent_id, path, collapse, name, icon, state, mini, component, layout, sort)
+insert into AUTH.MENU (menu_id, parent_id, sort)
 values
-	('DSB', null, '/dashboard', false, 'Dashboard', 'DashboardIcon', null, null, 'Dashboard', '/admin', '01'),
-	('PGS', null, null, true, 'Pages', 'Image', 'PageCollapse', null, null, null, '02'),
-	('PRC', 'PGS', '/pricing-page', false, 'Pricing Page', null, null, 'PP', 'PricingPage', '/auth', '021'),
-	('TML', 'PGS', '/timeline-page', false, 'Timeline Page', null, null, 'T', 'TimelinePage', '/admin', '022'),
-	('LGN', 'PGS', '/login-page', false, 'Login Page', null, null, 'L', 'LoginPage', '/auth', '023'),
-	('CMP', null, null, true, 'Components', 'Apps', 'ComponentsCollapse', null, null, null, '03'),
-	('BTN', 'CMP', '/buttons', false, 'Buttons', null, null, 'B', 'Buttons', '/admin', '031'),
-	('GRD', 'CMP', '/grid-system', false, 'Grid System', null, null, 'GS', 'GridSystem', '/admin', '032'),
-	('WDG', null, '/widgets', false, 'Widgets', 'WidgetsIcon', null, null, 'Widget', '/admin', '04')
+	('DSB', null, '01'),	
+	('PGS', null, '02'),
+	('PRC', 'PGS', '021'),
+	('TML', 'PGS', '022'),
+	('LGN', 'PGS', '023'),
+	('REG', 'PGS', '024'),
+	('LCK', 'PGS', '025'),
+	('PFL', 'PGS', '026'),
+	('ERR', 'PGS', '027'),	
+	('CMP', null, '03'),
+	('BTN', 'CMP', '031'),
+	('GRD', 'CMP', '032'),
+	('PNL', 'CMP', '033'),
+	('SAL', 'CMP', '034'),
+	('NTF', 'CMP', '035'),
+	('ICO', 'CMP', '036'),
+	('TYP', 'CMP', '037'),	
+	('FRM', null, '04'),
+	('RGF', 'FRM', '041'),
+	('XTF', 'FRM', '042'),
+	('VLF', 'FRM', '043'),
+	('WZD', 'FRM', '044'),	
+	('TBL', null, '05'),
+	('RGT', 'TBL', '051'),
+	('XTT', 'TBL', '052'),
+	('RCT', 'TBL', '053'),	
+	('MAP', null, '06'),
+	('GLM', 'MAP', '071'),
+	('FSM', 'MAP', '072'),
+	('VCM', 'MAP', '073'),	
+	('WDG', null, '07'),
+	('CRT', null, '08'),
+	('CAL', null, '09'),
+	('GAW', null, '10')
 	;
 	
-select * from AUTH.MENU order by sort;
-select menu_id, name, path from AUTH.MENU where parent_id is null order by sort;
-select menu_id, name, path from AUTH.MENU where parent_id='AAA' order by sort;
+select menu.menu_id,  comp.path, comp.is_parent as collapse, comp.name, comp.icon, comp.state, comp.component, comp.layout from AUTH.MENU menu join AUTH.COMPONENT comp on (menu.menu_id=comp.component_id) where menu.parent_id is null order by sort;
+
+
+select
+			menu.menu_id,
+			menu.parent_id,
+			comp.path,
+			comp.is_parent as collapse,
+			comp.name,
+			comp.mini,
+			comp.component,
+			comp.layout
+		from
+			AUTH.MENU menu join AUTH.COMPONENT comp on (menu.menu_id=comp.component_id)
+		where
+			menu.parent_id is not null
+		order by sort;
 ----------------------------------------------------------------------------------------------
 drop table AUTH.ROLE;
 CREATE TABLE AUTH.ROLE (
@@ -200,13 +294,52 @@ select parent.*, Child.views from (
 	) Child
 	on parent.menu_id=child.parent_Id)
 order by parent.sort) DR;
+	
+select row_to_json(DR) as dash_routes
+		from
+			(
+select parent.*, Child.views from (
+	(
+		select menu_id, path, collapse, name, icon, state, component, layout, sort from AUTH.MENU where parent_id is null
+	) Parent
+	left outer join (
+		select parent_id, array_to_json(array_agg(row_to_json(A))) as views
+		from
+			(
+			select
+				menu_id,
+				parent_id,
+				path,
+				collapse,
+				name,
+				mini,
+				component,
+				layout
+			from
+				AUTH.MENU
+			where
+				parent_id is not null
+			order by
+				sort) A
+			group by A.parent_id	
+	) Child
+	on parent.menu_id=child.parent_Id)
+order by parent.sort) DR;
 					
-					
-					
-					
-					
-					
-					
-					
-					
-					
+--Parent
+select
+			menu.menu_id, comp.path, comp.is_parent as collapse, comp.name, comp.icon, comp.state, comp.component, comp.layout
+		from
+			AUTH.MENU menu join AUTH.COMPONENT comp on (menu.menu_id=comp.component_id)
+		where menu.parent_id is null
+		order by sort;
+
+--Child
+select
+			menu.menu_id, menu.parent_id, comp.path, comp.is_parent as collapse,
+			comp.name, comp.mini, comp.component, comp.layout
+		from
+			AUTH.MENU menu join AUTH.COMPONENT comp on (menu.menu_id=comp.component_id)
+		where parent_id is not null
+		order by sort
+				
