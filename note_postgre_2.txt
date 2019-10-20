@@ -1,0 +1,110 @@
+Section 3. Filtering Data
+Where
+Limit
+>> select rownum, * from geographic.country where sort is not null order by sort limit 10 offset 5;
+Fetch
+> OFFSET start { ROW | ROWS }
+> FETCH { FIRST | NEXT } [ row_count ] { ROW | ROWS } ONLY
+>> select rownum, * from geographic.country where sort is not null order by sort offset 5 fetch first 10 row only;
+In
+Between
+> [value BETWEEN low AND high] ~= [value >= low AND value <= high]
+> [value NOT BETWEEN low AND high] ~= [value < low OR value > high]
+Like
+> Percent (%)  for matching any sequence of characters
+> Underscore (_)  for matching any single character
+>> SELECT
+   'foo' LIKE 'foo', -- true
+   'foo' LIKE 'f%', -- true
+   'foo' LIKE '_o_', -- true
+   'bar' LIKE 'b_'; -- false
+Is Null
+Table & Column aliases
+----------------------------------------------------------------------------------------------------------------------
+Section 4. Joining Multiple Tables
+Inner Join
+Left Join
+Self-Join
+Full Outer Join
+Cross Join
+Natural Join
+
+----------------------------------------------------------------------------------------------------------------------
+Section 5. Grouping Data
+Group By
+Having 
+>> select continent_code, count(1) as jumlah from geographic.country where sort is not null group by continent_code having count(1) > 20;
+----------------------------------------------------------------------------------------------------------------------
+Section 6. Performing Set Operations
+Union
+Intersect
+Except
+----------------------------------------------------------------------------------------------------------------------
+Section 7. Grouping Sets
+Grouping Sets
+> SELECT c1, c2, aggregate_function(c3)
+> FROM table_name
+> GROUP BY
+>     GROUPING SETS (
+>         (c1, c2), (c1), (c2), ()
+> 	  );
+Cube
+> SELECT c1, c2, aggregate_function(c3)
+> FROM table_name
+> GROUP BY
+>     CUBE (c1, c2, c3);
+Rollup
+> SELECT c1, c2, c3, aggregate_function(c4)
+> FROM table_name
+> GROUP BY
+>     ROLLUP (c1, c2, c3);
+
+Section 8. Subquery
+Subquery
+ANY
+ALL
+EXISTS
+----------------------------------------------------------------------------------------------------------------------
+Section 9. Common Table Expressions
+PostgreSQL CTE
+>> with cte_country as (
+>> 	select continent_code, count(1) as jumlah from geographic.country group by continent_code
+>> )
+>> select * from cte_country where jumlah > 20;
+Reqcursive quiery using CTEs
+----------------------------------------------------------------------------------------------------------------------
+Section 10. Modifying Data
+Insert
+>> INSERT INTO link (url, NAME, last_update) VALUES('http://www.postgresql.org','PostgreSQL',DEFAULT) 
+>> RETURNING id;
+Update
+Update join
+>> UPDATE link_tmp SET rel = link.rel, description = link.description, last_update = link.last_update
+>> FROM link
+>> WHERE link_tmp.id = link.id;
+Delete
+>> DELETE FROM geographic.country where country_code_2='XD'
+>> RETURNING *;
+Upsert
+>INSERT INTO table_name(column_list) VALUES(value_list)
+>ON CONFLICT target action;
+>The target can be: (column_name), ON CONSTRAINT constraint_name, WHERE predicate
+>The action can be: DO NOTHING, DO UPDATE SET column_1 = value_1, .. WHERE condition
+>> insert into GEOGRAPHIC.country(continent_code, Country, Country_Code_2, Country_Code_3, sort, usrcrt, dtmcrt, usrupd, dtmupd)
+>> values ('AS', 'Spratly Islands 2', 'XS', '',  null, 'SYSTEM', NOW(), 'SYSTEM', NOW())
+>> on conflict (Country_Code_2)
+>> do update set Country='Spratly Islands 3';
+----------------------------------------------------------------------------------------------------------------------
+Section 11. Transactions
+>> BEGIN;
+>> bla...bla...bla...
+>> COMMIT;
+----------------------------------------------------------------------------------------------------------------------
+Section 12. Import & Export Data
+>> COPY persons(first_name,last_name,dob,email) 
+>> FROM 'C:\tmp\persons.csv' DELIMITER ',' CSV HEADER;
+---
+>> COPY persons(first_name,last_name,email) 
+>> TO 'C:\tmp\persons_partial_db.csv' DELIMITER ',' CSV HEADER;
+---
+>> \copy (SELECT * FROM persons) to 'C:\tmp\persons_client.csv' with csv
