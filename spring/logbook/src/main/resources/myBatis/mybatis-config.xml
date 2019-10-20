@@ -31,6 +31,8 @@
     
     <mappers>
         <mapper resource= "myBatis/kota_id.xml"/>
+        <mapper resource= "myBatis/geographic.xml"/>
+        <mapper resource= "myBatis/auth/menu.xml"/>
     </mappers>
     
 </configuration>

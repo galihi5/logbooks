@@ -1,0 +1,26 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="geographic">
+	<resultMap id="countryMap" type="gaw.logbook.geographic.Country">
+		<id column="country_code_2" property="countryCode2" />
+		<result column="row_number" property="rowNumber"></result>
+		<result column="country_code_3" property="countryCode3"></result>
+		<result column="country" property="country"></result>
+		<result column="continent_code" property="continentCode"></result>
+		<result column="continent" property="continent"></result>
+	</resultMap>
+
+	<select id="getListCountries" resultMap="countryMap">
+		select row_number() over (order by country_code_2), country_code_2, country_code_3, country, continent_code, continent
+		from geographic.country A left outer join geographic.continent B on A.continent_code=B.continent_id
+		where A.is_active order by country_code_2
+	</select>
+	
+	<select id="getListCountriesPerPage" parameterType="int" resultMap="countryMap">
+		select row_number() over (order by country_code_2), country_code_2, country_code_3, country, continent_code, continent
+		from geographic.country A left outer join geographic.continent B on A.continent_code=B.continent_id
+		where A.is_active order by country_code_2
+		limit 10 offset (#{page}-1)*10
+	</select>
+</mapper>
