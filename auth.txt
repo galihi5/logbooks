@@ -135,8 +135,7 @@ CREATE TABLE AUTH.ROLE (
 	role_idx int,
 	role_name varchar (50) NOT NULL,
 	parent_id varchar(15) REFERENCES auth.role(role_id) on delete restrict on update restrict,
-	is_active boolean NOT null default TRUE,	
-	menu_bit_mask int,
+	is_active boolean NOT null default true,
 	sort varchar(10),
 	usrcrt varchar(30),
 	dtmcrt timestamp,
@@ -145,11 +144,11 @@ CREATE TABLE AUTH.ROLE (
 );
 
 delete from AUTH.role;
-insert into AUTH.role (role_id, role_idx, role_name, parent_id, menu_bit_mask, sort, usrcrt, dtmcrt, usrupd, dtmupd)
+insert into AUTH.role (role_id, role_idx, role_name, parent_id, sort, usrcrt, dtmcrt, usrupd, dtmupd)
 values
-	('X', 0, 'Role X', null, null, '01', 'SYSTEM', NOW(), 'SYSTEM', NOW()),
-	('Y', 1, 'Role Y', null, null, '02', 'SYSTEM', NOW(), 'SYSTEM', NOW()),
-	('Z', 2, 'Role Z', null, null, '03', 'SYSTEM', NOW(), 'SYSTEM', NOW())
+	('X', 0, 'Role X', null, '01', 'SYSTEM', NOW(), 'SYSTEM', NOW()),
+	('Y', 1, 'Role Y', null, '02', 'SYSTEM', NOW(), 'SYSTEM', NOW()),
+	('Z', 2, 'Role Z', null, '03', 'SYSTEM', NOW(), 'SYSTEM', NOW())
 	;
 
 select * from AUTH.ROLE;
@@ -186,18 +185,24 @@ values
 	(upper('u010'), 'User 010', 10, '0010', 'SYSTEM', NOW(), 'SYSTEM', NOW())
 ;
 
-select * from (select user_id, user_name, role_bit_mask, kode_cabang from AUTH.user where user_id='u007') A
-	right join (select role_id, role_idx, power(2, role_idx)::INTEGER as idx_power, role_name from AUTH.role) B on (A.role_bit_mask & B.idx_power)>0
-order by A.user_id, B.role_id;
+select A.user_id, A.user_name, A.kode_cabang, B.role_id, B.role_name from (select user_id, user_name, role_bit_mask, kode_cabang from AUTH.user where user_id=upper('u007')) A
+	join (select role_id, role_idx, power(2, role_idx)::INTEGER as idx_power, role_name, sort from AUTH.role) B on (A.role_bit_mask & B.idx_power)>0
+order by A.user_id, B.sort;
 --
 
+select
+	A.user_id, A.user_name, A.kode_cabang, array_to_json(array_agg(row_to_json(B))) as roles
+from
+	(select user_id, user_name, role_bit_mask, kode_cabang from AUTH.user where user_id=upper('u007')) A
+		join (select role_id, role_idx, power(2, role_idx)::INTEGER as idx_power, role_name from AUTH.role order by sort) B
+	on (A.role_bit_mask & B.idx_power)>0
+group by A.user_id, A.user_name, A.kode_cabang;
 
-select row_to_json(m)
-from (
-	select menu_id, name, path from AUTH.menu order by sort
-) m;
 
-select role_id, role_idx, power(2, role_idx), 2^role_idx as idx_power,role_name from AUTH.role;
+
+select array_to_json(array_agg(row_to_json(A)))
+	from (select role_id, role_idx, power(2, role_idx)::INTEGER as idx_power, role_name, sort from AUTH.role) A;
+
 
 select * from AUTH.menu;
 select * from AUTH.role;
@@ -236,64 +241,6 @@ select array_agg(row_to_json(T)) as content from
 ) T;
 			
 
-select menu_id, parent_id, path, collapse, name, icon, state, mini, component, layout, sort from AUTH.MENU order by sort;
-select menu_id, parent_id, path, collapse, name, icon, state, mini, component, layout, sort from AUTH.MENU where parent_id is not null order by sort;
-
-select menu_id, path, collapse, name, icon, state, component, layout from AUTH.MENU where parent_id is null order by sort;
-
-select
-	parent_id,
-	array_to_json(array_agg(row_to_json(A))) as views
-from
-	(
-	select
-		menu_id,
-		parent_id,
-		path,
-		collapse,
-		name,
-		mini,
-		component,
-		layout
-	from
-		AUTH.MENU
-	where
-		parent_id is not null
-	order by
-		sort) A
-	group by A.parent_id	
-		;
-					
-select array_to_json(array_agg(row_to_json(DR))) as dashRoutes
-		from
-			(
-select parent.*, Child.views from (
-	(
-		select menu_id, path, collapse, name, icon, state, component, layout, sort from AUTH.MENU where parent_id is null
-	) Parent
-	left outer join (
-		select parent_id, array_to_json(array_agg(row_to_json(A))) as views
-		from
-			(
-			select
-				menu_id,
-				parent_id,
-				path,
-				collapse,
-				name,
-				mini,
-				component,
-				layout
-			from
-				AUTH.MENU
-			where
-				parent_id is not null
-			order by
-				sort) A
-			group by A.parent_id	
-	) Child
-	on parent.menu_id=child.parent_Id)
-order by parent.sort) DR;
 	
 select row_to_json(DR) as dash_routes
 		from
@@ -342,4 +289,13 @@ select
 			AUTH.MENU menu join AUTH.COMPONENT comp on (menu.menu_id=comp.component_id)
 		where parent_id is not null
 		order by sort
-				
+					
+					
+		
+		select
+			A.user_id, A.user_name, A.kode_cabang, array_to_json(array_agg(row_to_json(B))) as roles
+		from
+			(select user_id, user_name, role_bit_mask, kode_cabang from AUTH.user where user_id=upper('u007')) A
+				join (select role_id, role_idx, power(2, role_idx)::INTEGER as idx_power, role_name from AUTH.role order by sort) B
+			on (A.role_bit_mask & B.idx_power)>0
+		group by A.user_id, A.user_name, A.kode_cabang;
