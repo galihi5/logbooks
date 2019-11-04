@@ -32,7 +32,7 @@
     <mappers>
         <mapper resource= "myBatis/kota_id.xml"/>
         <mapper resource= "myBatis/geographic.xml"/>
-        <mapper resource= "myBatis/auth/menu.xml"/>
+        <mapper resource= "myBatis/auth/authorization.xml"/>
     </mappers>
     
 </configuration>

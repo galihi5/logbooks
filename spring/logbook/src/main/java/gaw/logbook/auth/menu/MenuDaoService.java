@@ -23,7 +23,7 @@ public class MenuDaoService {
 	private List<Menu> getListMenuParent() throws SQLException{
 		session=myBatis.openSession(true);
 		try {
-			List<Menu> result=session.selectList("menu.getListMenuParent");
+			List<Menu> result=session.selectList("authorization.getListMenuParent");
 			return result;
 		}finally {
 			session.close();
@@ -33,7 +33,7 @@ public class MenuDaoService {
 	private List<Menu> getListMenuChild(String parentId) throws SQLException{
 		session=myBatis.openSession(true);
 		try {
-			List<Menu> result=session.selectList("menu.getListMenuChild", parentId);
+			List<Menu> result=session.selectList("authorization.getListMenuChild", parentId);
 			return result;
 		}finally {
 			session.close();

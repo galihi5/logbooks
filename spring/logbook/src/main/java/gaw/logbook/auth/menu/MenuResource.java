@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class MenuResource {
 	private MenuDaoService service=new MenuDaoService();
 	
-	@CrossOrigin(origins = "http://localhost:3000")
+//	@CrossOrigin(origins = "http://localhost:3000")
 	@GetMapping("/menus")
 	public List<Menu> retrieveAllMenu() throws SQLException {
 		return service.getListMenu();

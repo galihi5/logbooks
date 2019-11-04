@@ -2,6 +2,9 @@ import axios from 'axios-orders';
 import * as actionTypes from './actionTypes';
 import { updateObject } from 'store/Utility';
 
+// const USERNAME = 'gaw';
+// const PASSWORD = 'gaw123'
+
 export const initRoutesStart = () => {
     return {
         type: actionTypes.INIT_ROUTES_START
@@ -47,7 +50,7 @@ export const initRoutes = () => {
                 }
                 dispatch(initRoutesSuccess(routes));
             })
-            .catch(err => {
+            .catch(err => { 
                 dispatch(initRoutesFail(err))
             });
     }

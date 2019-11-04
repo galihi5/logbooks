@@ -1,0 +1,63 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="authorization">
+	<resultMap id="userRoleMap" type="gaw.logbook.auth.devdiaries.authentication.domain.User">
+		<id column="USER_ID" property="userid" />
+		<result column="USER_NAME" property="username"></result>
+		<result column="KODE_CABANG" property="kodeCabang"></result>
+		<result column="ROLES" property="roles"></result>
+	</resultMap>
+	
+	<select id="getUserRoles" parameterType="String" resultMap="userRoleMap">
+		select
+			A.user_id, A.user_name, A.kode_cabang, array_to_json(array_agg(row_to_json(B))) as roles
+		from
+			(select user_id, user_name, role_bit_mask, kode_cabang from AUTH.user where user_id=upper(#{userid})) A
+				join (select role_id, role_idx, power(2, role_idx)::INTEGER as idx_power, role_name from AUTH.role order by sort) B
+			on (A.role_bit_mask <![CDATA[&]]> B.idx_power)<![CDATA[>]]>0
+		group by A.user_id, A.user_name, A.kode_cabang;
+	</select>
+	
+	<resultMap id="menuParentMap" type="gaw.logbook.auth.menu.Menu">
+		<id column="MENU_ID" property="menuId" />
+		<result column="PATH" property="path"></result>
+		<result column="COLLAPSE" property="collapse"></result>
+		<result column="NAME" property="name"></result>
+		<result column="ICON" property="icon"></result>
+		<result column="STATE" property="state"></result>
+		<result column="COMPONENT" property="component"></result>
+		<result column="LAYOUT" property="layout"></result>
+	</resultMap>
+
+	<select id="getListMenuParent" resultMap="menuParentMap">
+		select
+			menu.menu_id, comp.path, comp.is_parent as collapse, comp.name, comp.icon, comp.state, comp.component, comp.layout
+		from
+			AUTH.MENU menu join AUTH.COMPONENT comp on (menu.menu_id=comp.component_id)
+		where menu.parent_id is null
+		order by sort;
+	</select>
+
+
+	<resultMap id="menuChildMap" type="gaw.logbook.auth.menu.Menu">
+		<id column="MENU_ID" property="menuId" />
+		<result column="PARENT_ID" property="parentId"></result>
+		<result column="PATH" property="path"></result>
+		<result column="COLLAPSE" property="collapse"></result>
+		<result column="NAME" property="name"></result>
+		<result column="MINI" property="mini"></result>
+		<result column="COMPONENT" property="component"></result>
+		<result column="LAYOUT" property="layout"></result>
+	</resultMap>
+
+	<select id="getListMenuChild" parameterType="String" resultMap="menuChildMap">
+		select
+			menu.menu_id, menu.parent_id, comp.path, comp.is_parent as collapse,
+			comp.name, comp.mini, comp.component, comp.layout
+		from
+			AUTH.MENU menu join AUTH.COMPONENT comp on (menu.menu_id=comp.component_id)
+		where parent_id=#{parentId}
+		order by sort
+	</select>
+</mapper>

@@ -56,7 +56,7 @@ var dashRoutes = [
     views: [
       {
         path: "/pricing-page",
-        name: "Pricing Page",
+        name: "Pricing Page yo",
         rtlName: "عالتسعير",
         mini: "PP",
         rtlMini: "ع",
@@ -145,7 +145,7 @@ var dashRoutes = [
         views: [
           {
             path: "/buttons",
-            name: "Buttons",
+            name: "Buttons A",
             rtlName: "وصفت",
             mini: "B",
             rtlMini: "ب",

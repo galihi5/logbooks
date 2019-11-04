@@ -7,15 +7,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
-//import org.springframework.context.annotation.Configuration;
-//import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-//import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver;
 
 @SpringBootApplication
 public class LogbookApplication extends SpringBootServletInitializer {
-
 	public static void main(String[] args) {
 		SpringApplication.run(LogbookApplication.class, args);
 	}
@@ -26,12 +22,12 @@ public class LogbookApplication extends SpringBootServletInitializer {
 		localeResolver.setDefaultLocale(Locale.US);
 		return localeResolver;
 	}
-	
+
 	@Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-        return builder.sources(LogbookApplication.class);
-    }
-	
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+		return builder.sources(LogbookApplication.class);
+	}
+
 //	@Configuration
 //	public static class SecurityPermitAllConfig extends WebSecurityConfigurerAdapter{
 //		@Override
@@ -40,4 +36,5 @@ public class LogbookApplication extends SpringBootServletInitializer {
 //	            .and().csrf().disable();
 //	    }
 //	}
+
 }

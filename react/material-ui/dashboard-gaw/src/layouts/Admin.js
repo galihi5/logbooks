@@ -24,6 +24,10 @@ var ps;
 const useStyles = makeStyles(styles);
 
 const DashboardLayout = (props) => {
+  if (props.error!= null){
+    console.log(props.error);
+    props.history.push('/login');
+  }
   let routes = [];
   if (!props.routesLoading && !props.routesLoaded) {
     props.initRoutesStart();

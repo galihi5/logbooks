@@ -7,13 +7,12 @@ import { VectorMap } from "react-jvectormap";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import Tooltip from "@material-ui/core/Tooltip";
-// import Icon from "@material-ui/core/Icon";
 
 // @material-ui/icons
 import FileCopyOutlined from "@material-ui/icons/FileCopyOutlined";
 import Store from "@material-ui/icons/Store";
 import InfoOutlined from "@material-ui/icons/InfoOutlined";
-import PetsOutlined from "@material-ui/icons/PetsOutlined"
+import Pets from "@material-ui/icons/Pets";
 import Warning from "@material-ui/icons/Warning";
 import DateRange from "@material-ui/icons/DateRange";
 import LocalOffer from "@material-ui/icons/LocalOffer";
@@ -139,7 +138,7 @@ export default function Dashboard() {
           <Card>
             <CardHeader color="info" stats icon>
               <CardIcon color="info">
-                <PetsOutlined />
+                <Pets />
               </CardIcon>
               <p className={classes.cardCategory}>Followers</p>
               <h3 className={classes.cardTitle}>+245</h3>
